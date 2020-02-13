@@ -44,6 +44,7 @@
         </div>
         <div class="col">
           <div>Computer Icon</div>
+          <font-awesome-icon :icon="this.ComputerChoice" />
 
           <br />
 
@@ -78,10 +79,50 @@
 //import HelloWorld from "./components/HelloWorld.vue";
 
 export default {
-  name: "App"
+  name: "App",
   //  components: {
   //    HelloWorld
   //  }
+  
+  data() {
+    return {
+      NumberGenerator: 1,
+      ComputerChoice: 'hand-scissors',
+    };
+  },
+  
+  props: {
+  icon: String,
+  },
+  
+  methods: {
+//    say: function (msg) {
+//      alert(msg)
+//    }
+  },
+  
+  created: function() {
+    setInterval( function() {
+      
+      this.NumberGenerator = Math.floor( ( Math.random() * 3) + 1 );
+//      var ComputerChoice = 'hand-scissors';
+      
+      if(this.NumberGenerator == 1) {
+         this.ComputerChoice = 'hand-paper';
+      } 
+      
+      if(this.NumberGenerator == 2) {
+         this.ComputerChoice = 'hand-rock';
+      } 
+      
+      if(this.NumberGenerator == 3) {
+         this.ComputerChoice = 'hand-scissors';
+      } 
+      
+      console.log( this.ComputerChoice );
+      
+    }, 1000);
+  }
 };
 </script>
 
