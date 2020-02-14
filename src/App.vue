@@ -8,46 +8,60 @@
       </div>
       <div class="row">
         <div class="col">
-          <font-awesome-icon size="5x" :icon="this.humanChoice" class="human-icon" />
+          <font-awesome-icon
+            size="5x"
+            :icon="this.humanChoice"
+            class="human-icon"
+          />
 
           <div>
-          <button
-            type="button"
-            class="btn btn-primary"
-            data-toggle="button"
-            aria-pressed="false"
-            @click="onAction('hand-paper')"
-          >
-            Paper
-          </button>
+            <button
+              type="button"
+              class="btn btn-primary"
+              data-toggle="button"
+              aria-pressed="false"
+              @click="onAction('hand-paper')"
+            >
+              Paper
+            </button>
 
-          <button
-            type="button"
-            class="btn btn-primary"
-            data-toggle="button"
-            aria-pressed="false"
-            @click="onAction('hand-rock')"
-          >
-            Rock
-          </button>
+            <button
+              type="button"
+              class="btn btn-primary"
+              data-toggle="button"
+              aria-pressed="false"
+              @click="onAction('hand-rock')"
+            >
+              Rock
+            </button>
 
-          <button
-            type="button"
-            class="btn btn-primary"
-            data-toggle="button"
-            aria-pressed="false"
-            @click="onAction('hand-scissors')"
-          >
-            Scissors
-          </button>
-  </div>
+            <button
+              type="button"
+              class="btn btn-primary"
+              data-toggle="button"
+              aria-pressed="false"
+              @click="onAction('hand-scissors')"
+            >
+              Scissors
+            </button>
+          </div>
         </div>
         <div class="col">
-          <font-awesome-icon class="computer-icon" size="5x" :icon="this.ComputerChoice" />
+          <font-awesome-icon
+            class="computer-icon"
+            size="5x"
+            :icon="this.computerChoice"
+          />
 
           <div>Is thinking...</div>
         </div>
       </div>
+      <div class="row">
+        <div class="col">
+          <h2>{{ this.results }}</h2>
+    </div>
+  
+  </div>
 
       <div class="row">
         <div class="col">
@@ -86,35 +100,36 @@ export default {
       idleScreen: true,
       computerIconGenerator: 1,
       humanIconGenerator: 1,
-      ComputerChoice: "hand-scissors",
-      humanChoice: "hand-rock"
+      computerChoice: "hand-scissors",
+      humanChoice: "hand-rock",
+      results: '',
     };
   },
 
   mounted() {
-//    this.onIdleScreen();
+    //    this.onIdleScreen();
   },
 
   methods: {
     onIdleScreen() {
       this.idleScreen = true;
-      
+
       setInterval(() => {
         this.computerIconGenerator = Math.floor(Math.random() * 3 + 1);
         this.humanIconGenerator = Math.floor(Math.random() * 3 + 1);
 
         if (this.computerIconGenerator == 1) {
-          this.ComputerChoice = "hand-paper";
+          this.computerChoice = "hand-paper";
         }
 
         if (this.computerIconGenerator == 2) {
-          this.ComputerChoice = "hand-rock";
+          this.computerChoice = "hand-rock";
         }
 
         if (this.computerIconGenerator == 3) {
-          this.ComputerChoice = "hand-scissors";
+          this.computerChoice = "hand-scissors";
         }
-        
+
         if (this.humanIconGenerator == 1) {
           this.humanChoice = "hand-paper";
         }
@@ -128,56 +143,60 @@ export default {
         }
       }, 1000);
     },
-    
-    onAction( hand ) {
+
+    onAction(hand) {
       this.idleScreen = false;
-      
+
       this.computerIconGenerator = Math.floor(Math.random() * 3 + 1);
-      
+
       if (this.computerIconGenerator == 1) {
-        this.ComputerChoice = "hand-paper";
+        this.computerChoice = "hand-paper";
       }
 
       if (this.computerIconGenerator == 2) {
-        this.ComputerChoice = "hand-rock";
+        this.computerChoice = "hand-rock";
       }
 
       if (this.computerIconGenerator == 3) {
-        this.ComputerChoice = "hand-scissors";
+        this.computerChoice = "hand-scissors";
       }
       
-      console.log( hand );
-      console.log( this.ComputerChoice );
-      
-      if( hand == 'hand-rock' && this.ComputerChoice == 'hand-scissors' || 
-          hand == 'hand-paper' && this.ComputerChoice == 'hand-rock' ||
-          hand == 'hand-scissors' && this.ComputerChoice == 'hand-paper' ) {
-        console.log( 'User wins!' );
-      } else if( hand == 'hand-rock' && this.ComputerChoice == 'hand-rock' || 
-          hand == 'hand-paper' && this.ComputerChoice == 'hand-paper' ||
-          hand == 'hand-scissors' && this.ComputerChoice == 'hand-scissors' ) {
-        console.log( 'It\'s a draw!' );
+      this.humanChoice = hand;
+
+      console.log(hand);
+      console.log(this.computerChoice);
+
+      if (
+        (hand == "hand-rock" && this.computerChoice == "hand-scissors") ||
+        (hand == "hand-paper" && this.computerChoice == "hand-rock") ||
+        (hand == "hand-scissors" && this.computerChoice == "hand-paper")
+      ) {
+        console.log("User wins!");
+        this.results = "User wins!";
+      } else if (
+        (hand == "hand-rock" && this.computerChoice == "hand-rock") ||
+        (hand == "hand-paper" && this.computerChoice == "hand-paper") ||
+        (hand == "hand-scissors" && this.computerChoice == "hand-scissors")
+      ) {
+        console.log("It's a draw!");
+        this.results = "It's a draw!";
+      } else if (
+        (hand == "hand-rock" && this.computerChoice == "hand-paper") ||
+        (hand == "hand-paper" && this.computerChoice == "hand-scissors") ||
+        (hand == "hand-scissors" && this.computerChoice == "hand-rock")
+      ) {
+        console.log("Computer wins");
+        this.results = "Computer Wins";
       }
-      else if( hand == 'hand-rock' && this.ComputerChoice == 'hand-paper' || 
-          hand == 'hand-paper' && this.ComputerChoice == 'hand-scissors' ||
-          hand == 'hand-scissors' && this.ComputerChoice == 'hand-rock' ) {
-        console.log( 'Computer wins' );
-      }
-      
-      
-      
-      
-      
-//      setTimeout( () => {
-//        console.log( 'Action has ended' );
-//      }, 4000);
-//      
-//      
-      
-      
-      
+
+      //      setTimeout( () => {
+      //        console.log( 'Action has ended' );
+      //      }, 4000);
+      //
+      //
+
       this.idleScreen = true;
-    },
+    }
   },
 
   created: function() {}
@@ -193,13 +212,11 @@ export default {
   color: #2c3e50;
   margin-top: 60px;
 }
-  
-  
-  
+
 .human-icon {
   font-size: 20em;
   padding: 50px 0;
-  
+
   &.fa-hand-scissors {
     transform: scaleX(-1);
   }
@@ -213,7 +230,7 @@ export default {
 .computer-icon {
   font-size: 20em;
   padding: 50px 0;
-  
+
   &.fa-hand-rock,
   &.fa-hand-paper {
     transform: scaleX(-1) rotate(90deg);
