@@ -8,10 +8,12 @@
       </div>
       <div class="row">
         <div class="col">
-          <div>Human Icon</div>
+<!--
           <font-awesome-icon size="5x" icon="hand-paper" />
           <font-awesome-icon size="5x" icon="hand-rock" />
           <font-awesome-icon size="5x" icon="hand-scissors" />
+-->
+          <font-awesome-icon size="5x" :icon="this.humanChoice" class="human-icon" />
 
           <br />
 
@@ -43,8 +45,7 @@
           </button>
         </div>
         <div class="col">
-          <div>Computer Icon</div>
-          <font-awesome-icon size="5x" :icon="this.ComputerChoice" />
+          <font-awesome-icon class="computer-icon" size="5x" :icon="this.ComputerChoice" />
 
           <br />
 
@@ -83,49 +84,54 @@ export default {
   //  components: {
   //    HelloWorld
   //  }
-  
+
   data() {
     return {
-      NumberGenerator: 1,
-      ComputerChoice: 'hand-scissors',
+      computerIconGenerator: 1,
+      humanIconGenerator: 1,
+      ComputerChoice: "hand-scissors",
+      humanChoice: "hand-rock"
     };
   },
-  
-  props: {
-  icon: String,
-  },
-  
+
   mounted() {
-
-      this.animate();  
-
+    this.animate();
   },
-  
+
   methods: {
     animate() {
-          setInterval( () => {
-      this.NumberGenerator = Math.floor( ( Math.random() * 3) + 1 );
+      setInterval(() => {
+        this.computerIconGenerator = Math.floor(Math.random() * 3 + 1);
+        this.humanIconGenerator = Math.floor(Math.random() * 3 + 1);
+
+        if (this.computerIconGenerator == 1) {
+          this.ComputerChoice = "hand-paper";
+        }
+
+        if (this.computerIconGenerator == 2) {
+          this.ComputerChoice = "hand-rock";
+        }
+
+        if (this.computerIconGenerator == 3) {
+          this.ComputerChoice = "hand-scissors";
+        }
         
-      if(this.NumberGenerator == 1) {
-        this.ComputerChoice = 'hand-paper';
-      } 
+        if (this.humanIconGenerator == 1) {
+          this.humanChoice = "hand-paper";
+        }
 
-      if(this.NumberGenerator == 2) {
-         this.ComputerChoice = 'hand-rock';
-      } 
+        if (this.humanIconGenerator == 2) {
+          this.humanChoice = "hand-rock";
+        }
 
-      if(this.NumberGenerator == 3) {
-         this.ComputerChoice = 'hand-scissors';
-      } 
-      
-      console.log( this.ComputerChoice );
-                }, 1000);
-    },
+        if (this.humanIconGenerator == 3) {
+          this.humanChoice = "hand-scissors";
+        }
+      }, 1000);
+    }
   },
-  
-  created: function() {
 
-  }
+  created: function() {}
 };
 </script>
 
@@ -137,5 +143,31 @@ export default {
   text-align: center;
   color: #2c3e50;
   margin-top: 60px;
+}
+  
+  
+  
+.human-icon {
+  font-size: 20em;
+  padding: 50px 0;
+  
+  &.fa-hand-scissors {
+    transform: scaleX(-1);
+  }
+
+  &.fa-hand-rock,
+  &.fa-hand-paper {
+    transform: rotate(90deg);
+  }
+}
+
+.computer-icon {
+  font-size: 20em;
+  padding: 50px 0;
+  
+  &.fa-hand-rock,
+  &.fa-hand-paper {
+    transform: scaleX(-1) rotate(90deg);
+  }
 }
 </style>
