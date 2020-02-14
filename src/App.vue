@@ -9,9 +9,9 @@
       <div class="row">
         <div class="col">
           <div>Human Icon</div>
-          <font-awesome-icon icon="hand-paper" />
-          <font-awesome-icon icon="hand-rock" />
-          <font-awesome-icon icon="hand-scissors" />
+          <font-awesome-icon size="5x" icon="hand-paper" />
+          <font-awesome-icon size="5x" icon="hand-rock" />
+          <font-awesome-icon size="5x" icon="hand-scissors" />
 
           <br />
 
@@ -44,7 +44,7 @@
         </div>
         <div class="col">
           <div>Computer Icon</div>
-          <font-awesome-icon :icon="this.ComputerChoice" />
+          <font-awesome-icon size="5x" :icon="this.ComputerChoice" />
 
           <br />
 
@@ -95,33 +95,36 @@ export default {
   icon: String,
   },
   
-  methods: {
-//    say: function (msg) {
-//      alert(msg)
-//    }
+  mounted() {
+
+      this.animate();  
+
   },
   
-  created: function() {
-    setInterval( function() {
-      
+  methods: {
+    animate() {
+          setInterval( () => {
       this.NumberGenerator = Math.floor( ( Math.random() * 3) + 1 );
-//      var ComputerChoice = 'hand-scissors';
-      
+        
       if(this.NumberGenerator == 1) {
-         this.ComputerChoice = 'hand-paper';
+        this.ComputerChoice = 'hand-paper';
       } 
-      
+
       if(this.NumberGenerator == 2) {
          this.ComputerChoice = 'hand-rock';
       } 
-      
+
       if(this.NumberGenerator == 3) {
          this.ComputerChoice = 'hand-scissors';
       } 
       
       console.log( this.ComputerChoice );
-      
-    }, 1000);
+                }, 1000);
+    },
+  },
+  
+  created: function() {
+
   }
 };
 </script>
