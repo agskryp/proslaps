@@ -8,6 +8,7 @@
       </div>
       <div class="row">
         <div class="col">
+          <h2>User</h2>
           <font-awesome-icon
             size="5x"
             :icon="this.humanChoice"
@@ -47,6 +48,7 @@
           </div>
         </div>
         <div class="col">
+          <h2>Computer</h2>
           <font-awesome-icon
             class="computer-icon"
             size="5x"
@@ -65,15 +67,15 @@
 
       <div class="row">
         <div class="col">
-          Wins: #
+          Wins: {{ this.counterWins }}
         </div>
 
         <div class="col">
-          Draws: #
+          Draws: {{ this.counterDraws }}
         </div>
 
         <div class="col">
-          Loses: #
+          Loses: {{ this.counterLoses }}
         </div>
       </div>
 
@@ -103,45 +105,48 @@ export default {
       computerChoice: "hand-scissors",
       humanChoice: "hand-rock",
       results: '',
+      counterWins: 0,
+      counterDraws: 0,
+      counterLoses: 0,
     };
   },
 
   mounted() {
-    //    this.onIdleScreen();
+    this.onIdleScreen();
   },
 
   methods: {
     onIdleScreen() {
-      this.idleScreen = true;
+      if( this.idleScreen !== false ) {
+        setInterval(() => {
+          this.computerIconGenerator = Math.floor(Math.random() * 3 + 1);
+          this.humanIconGenerator = Math.floor(Math.random() * 3 + 1);
 
-      setInterval(() => {
-        this.computerIconGenerator = Math.floor(Math.random() * 3 + 1);
-        this.humanIconGenerator = Math.floor(Math.random() * 3 + 1);
+          if (this.computerIconGenerator == 1) {
+            this.computerChoice = "hand-paper";
+          }
 
-        if (this.computerIconGenerator == 1) {
-          this.computerChoice = "hand-paper";
-        }
+          if (this.computerIconGenerator == 2) {
+            this.computerChoice = "hand-rock";
+          }
 
-        if (this.computerIconGenerator == 2) {
-          this.computerChoice = "hand-rock";
-        }
+          if (this.computerIconGenerator == 3) {
+            this.computerChoice = "hand-scissors";
+          }
 
-        if (this.computerIconGenerator == 3) {
-          this.computerChoice = "hand-scissors";
-        }
+          if (this.humanIconGenerator == 1) {
+            this.humanChoice = "hand-paper";
+          }
 
-        if (this.humanIconGenerator == 1) {
-          this.humanChoice = "hand-paper";
-        }
+          if (this.humanIconGenerator == 2) {
+            this.humanChoice = "hand-rock";
+          }
 
-        if (this.humanIconGenerator == 2) {
-          this.humanChoice = "hand-rock";
-        }
-
-        if (this.humanIconGenerator == 3) {
-          this.humanChoice = "hand-scissors";
-        }
-      }, 1000);
+          if (this.humanIconGenerator == 3) {
+            this.humanChoice = "hand-scissors";
+          }
+        }, 1000);
+      }
     },
 
     onAction(hand) {
@@ -163,39 +168,37 @@ export default {
       
       this.humanChoice = hand;
 
-      console.log(hand);
-      console.log(this.computerChoice);
-
       if (
         (hand == "hand-rock" && this.computerChoice == "hand-scissors") ||
         (hand == "hand-paper" && this.computerChoice == "hand-rock") ||
         (hand == "hand-scissors" && this.computerChoice == "hand-paper")
       ) {
-        console.log("User wins!");
+        this.counterWins++;
         this.results = "User wins!";
-      } else if (
+      } 
+      
+      else if (
         (hand == "hand-rock" && this.computerChoice == "hand-rock") ||
         (hand == "hand-paper" && this.computerChoice == "hand-paper") ||
         (hand == "hand-scissors" && this.computerChoice == "hand-scissors")
       ) {
-        console.log("It's a draw!");
+        this.counterDraws++;
         this.results = "It's a draw!";
-      } else if (
+      }       
+      
+      else if (
         (hand == "hand-rock" && this.computerChoice == "hand-paper") ||
         (hand == "hand-paper" && this.computerChoice == "hand-scissors") ||
         (hand == "hand-scissors" && this.computerChoice == "hand-rock")
       ) {
-        console.log("Computer wins");
+        this.counterLoses++;
         this.results = "Computer Wins";
       }
 
-      //      setTimeout( () => {
-      //        console.log( 'Action has ended' );
-      //      }, 4000);
-      //
-      //
-
-      this.idleScreen = true;
+      setTimeout( () => {
+        this.idleScreen = true;
+        this.results = "Play again?";
+      }, 3000);
     }
   },
 
