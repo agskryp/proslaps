@@ -7,10 +7,12 @@ import { library } from "@fortawesome/fontawesome-svg-core";
 import {
   faHandPaper,
   faHandRock,
-  faHandScissors
+  faHandScissors,
+  faHandLizard,
+  faHandSpock
 } from "@fortawesome/free-solid-svg-icons";
 
-library.add(faHandPaper, faHandRock, faHandScissors);
+library.add(faHandPaper, faHandRock, faHandScissors, faHandLizard, faHandSpock);
 
 Vue.component("font-awesome-icon", FontAwesomeIcon);
 
