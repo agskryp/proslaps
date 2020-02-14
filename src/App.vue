@@ -112,46 +112,43 @@ export default {
   },
 
   mounted() {
-    this.onIdleScreen();
+    this.t = setInterval(() => {
+      this.onIdleScreen();
+    }, 1000);
   },
 
   methods: {
-    onIdleScreen() {
-      if( this.idleScreen !== false ) {
-        setInterval(() => {
-          this.computerIconGenerator = Math.floor(Math.random() * 3 + 1);
-          this.humanIconGenerator = Math.floor(Math.random() * 3 + 1);
+    onIdleScreen: function() {
+      this.computerIconGenerator = Math.floor(Math.random() * 3 + 1);
+      this.humanIconGenerator = Math.floor(Math.random() * 3 + 1);
 
-          if (this.computerIconGenerator == 1) {
-            this.computerChoice = "hand-paper";
-          }
+      if (this.computerIconGenerator == 1) {
+        this.computerChoice = "hand-paper";
+      }
 
-          if (this.computerIconGenerator == 2) {
-            this.computerChoice = "hand-rock";
-          }
+      if (this.computerIconGenerator == 2) {
+        this.computerChoice = "hand-rock";
+      }
 
-          if (this.computerIconGenerator == 3) {
-            this.computerChoice = "hand-scissors";
-          }
+      if (this.computerIconGenerator == 3) {
+        this.computerChoice = "hand-scissors";
+      }
 
-          if (this.humanIconGenerator == 1) {
-            this.humanChoice = "hand-paper";
-          }
+      if (this.humanIconGenerator == 1) {
+        this.humanChoice = "hand-paper";
+      }
 
-          if (this.humanIconGenerator == 2) {
-            this.humanChoice = "hand-rock";
-          }
+      if (this.humanIconGenerator == 2) {
+        this.humanChoice = "hand-rock";
+      }
 
-          if (this.humanIconGenerator == 3) {
-            this.humanChoice = "hand-scissors";
-          }
-        }, 1000);
+      if (this.humanIconGenerator == 3) {
+        this.humanChoice = "hand-scissors";
       }
     },
 
     onAction(hand) {
-      this.idleScreen = false;
-
+      clearInterval(this.t);
       this.computerIconGenerator = Math.floor(Math.random() * 3 + 1);
 
       if (this.computerIconGenerator == 1) {
@@ -195,14 +192,18 @@ export default {
         this.results = "Computer Wins";
       }
 
-      setTimeout( () => {
-        this.idleScreen = true;
+      setTimeout( () => {     
+              this.t = setInterval(() => {
+      this.onIdleScreen();
+    }, 1000);
         this.results = "Play again?";
       }, 3000);
     }
   },
 
-  created: function() {}
+  created: function() {
+
+  }
 };
 </script>
 
