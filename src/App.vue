@@ -1,17 +1,23 @@
 <template>
-  <div id="app" style="width: 100vw; height: 100vh; display: flex; align-items: center;  justify-content: center;">
+  <div
+    id="app"
+    style="width: 100vw; height: 100vh; display: flex; align-items: center;  justify-content: center;"
+  >
     <div class="container">
       <div class="row">
         <div class="col text-center">
           <h1>Pro Slaps!</h1>
         </div>
       </div>
-      
+
       <div class="row">
         <div class="col-5">
           <h2 class="text-center">User</h2>
 
-          <div class="human-icon-container" :class="{ 'stop-animation': actionResults }">
+          <div
+            class="human-icon-container"
+            :class="{ 'stop-animation': actionResults }"
+          >
             <font-awesome-icon
               size="5x"
               :icon="this.humanChoice"
@@ -19,15 +25,18 @@
             />
           </div>
         </div>
-        
+
         <div class="col-2 d-flex align-items-center text-center">
           <h3>{{ this.results }}</h3>
         </div>
-        
+
         <div class="col-5">
           <h2 class="text-center">Computer</h2>
 
-          <div class="computer-icon-container text-right" :class="{ 'stop-animation': actionResults }">
+          <div
+            class="computer-icon-container text-right"
+            :class="{ 'stop-animation': actionResults }"
+          >
             <font-awesome-icon
               class="computer-icon"
               size="5x"
@@ -36,83 +45,72 @@
           </div>
         </div>
       </div>
-      
-            <div class="row">
+
+      <div class="row">
         <div class="col text-center">
           <h4>Custom result text here</h4>
         </div>
       </div>
-      
+
       <div class="row">
         <div class="col">
-                    
-            <button
-              type="button"
-              class="btn btn-primary btn-lg btn-block"
-              data-toggle="button"
-              aria-pressed="false"
-              @click="onAction('hand-paper')"
-            >
-              Paper
-            </button>
-  </div>
+          <button
+            type="button"
+            class="btn btn-primary btn-lg btn-block"
+            data-toggle="button"
+            aria-pressed="false"
+            @click="onAction('hand-paper')"
+          >
+            Paper
+          </button>
+        </div>
 
-        
         <div class="col">
-            <button
-              type="button"
-              class="btn btn-primary btn-lg btn-block"
-              data-toggle="button"
-              aria-pressed="false"
-              @click="onAction('hand-rock')"
-            >
-              Rock
-            </button>
-          
-          </div>
+          <button
+            type="button"
+            class="btn btn-primary btn-lg btn-block"
+            data-toggle="button"
+            aria-pressed="false"
+            @click="onAction('hand-rock')"
+          >
+            Rock
+          </button>
+        </div>
 
-        
         <div class="col">
+          <button
+            type="button"
+            class="btn btn-primary btn-lg btn-block"
+            data-toggle="button"
+            aria-pressed="false"
+            @click="onAction('hand-scissors')"
+          >
+            Scissors
+          </button>
+        </div>
 
-            <button
-              type="button"
-              class="btn btn-primary btn-lg btn-block"
-              data-toggle="button"
-              aria-pressed="false"
-              @click="onAction('hand-scissors')"
-            >
-              Scissors
-            </button>
-          
-          </div>
-
-        
         <div class="col">
-          
-            <button
-              type="button"
-              class="btn btn-primary btn-lg btn-block"
-              data-toggle="button"
-              aria-pressed="false"
-              @click="onAction('hand-lizard')"
-            >
-              Lizard
-            </button>
-          </div>
+          <button
+            type="button"
+            class="btn btn-primary btn-lg btn-block"
+            data-toggle="button"
+            aria-pressed="false"
+            @click="onAction('hand-lizard')"
+          >
+            Lizard
+          </button>
+        </div>
 
-        
         <div class="col">
-          
-            <button
-              type="button"
-              class="btn btn-primary btn-lg btn-block"
-              data-toggle="button"
-              aria-pressed="false"
-              @click="onAction('hand-spock')"
-            >
-              Spock
-            </button>
-          
+          <button
+            type="button"
+            class="btn btn-primary btn-lg btn-block"
+            data-toggle="button"
+            aria-pressed="false"
+            @click="onAction('hand-spock')"
+          >
+            Spock
+          </button>
         </div>
       </div>
 
@@ -123,16 +121,20 @@
 
         <div class="col text-right">Loses: {{ this.counterLoses }}</div>
       </div>
-          
+
       <div class="row">
         <div class="col text-center">
-          <button @click="rulesButton()">Rules</button> | <a href="#" @click="showInfo()">Information</a> | Made by <a href="https://agskryp.com" target="_blank">A.G. Skryp</a>
+          <button @click="rulesButton()">Rules</button> |
+          <a href="#" @click="showInfo()">Information</a> | Made by
+          <a href="https://agskryp.com" target="_blank">A.G. Skryp</a>
         </div>
       </div>
 
-<Information></Information>
-<RulesModal  v-if="showRulesModal"   @closeWindow="showRulesModal = false"></RulesModal>
-      
+      <Information></Information>
+      <RulesModal
+        v-if="showRulesModal"
+        @closeWindow="showRulesModal = false"
+      ></RulesModal>
     </div>
   </div>
 </template>
@@ -143,10 +145,10 @@ import RulesModal from "./components/Rules.vue";
 
 export default {
   name: "App",
-    components: {
-      Information,
-      RulesModal
-    },
+  components: {
+    Information,
+    RulesModal
+  },
 
   data() {
     return {
@@ -215,10 +217,10 @@ export default {
         this.humanChoice = "hand-spock";
       }
     },
-    
+
     rulesButton() {
-      console.log( 'clicked!' );
-      this.showRulesModal = true
+      console.log("clicked!");
+      this.showRulesModal = true;
     },
 
     onAction(hand) {
@@ -309,14 +311,14 @@ export default {
 
 <style lang="scss">
 #app {
-/*  font-family: Avenir, Helvetica, Arial, sans-serif;*/
+  /*  font-family: Avenir, Helvetica, Arial, sans-serif;*/
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-/*  text-align: center;*/
-/*  color: #2c3e50;*/
-/*  margin-top: 60px;*/
+  /*  text-align: center;*/
+  /*  color: #2c3e50;*/
+  /*  margin-top: 60px;*/
 }
-  
+
 .stop-animation {
   animation: none !important;
 }
