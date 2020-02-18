@@ -1,14 +1,13 @@
 <template>
   <div class="modal-container">
-    <div class="modal-dialog" role="document">
+    <div class="modal-dialog">
       <div class="modal-content">
         <div class="modal-header">
-          <h5 class="modal-title" id="exampleModalLabel">Rules</h5>
+          <h5 class="modal-title">Rules</h5>
           
           <button
             type="button"
             class="close"
-            data-dismiss="modal"
             aria-label="Close"
             @click="rules()"
           >
@@ -17,7 +16,7 @@
         </div>
         
         <div class="modal-body">
-          <p>Defeat the computer by selecting the greater hand gesture.  Choosing the same move results in a draw.</p>
+          <p>Defeat the computer by selecting the greater hand gesture.</p>
           
           <table class="table table-sm table-bordered">
             <thead class="table-active">
@@ -60,13 +59,13 @@
             </tbody>
           </table>
           
+          <p>Choosing the same move as the machine will result in a draw.</p>
         </div>
         
         <div class="modal-footer">
           <button
             type="button"
             class="btn btn-secondary"
-            data-dismiss="modal"
             @click="rules()"
           >
             Close

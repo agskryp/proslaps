@@ -15,7 +15,7 @@
           <h2 class="text-center">User</h2>
 
           <div
-            class="human-icon-container"
+            class="human-icon-container text-center"
             :class="{ 'stop-animation': actionResults }"
           >
             <font-awesome-icon
@@ -34,7 +34,7 @@
           <h2 class="text-center">Computer</h2>
 
           <div
-            class="computer-icon-container text-right"
+            class="computer-icon-container text-center"
             :class="{ 'stop-animation': actionResults }"
           >
             <font-awesome-icon
@@ -56,7 +56,7 @@
         <div class="col">
           <button
             type="button"
-            class="btn btn-primary btn-lg btn-block"
+            class="btn btn-light btn-lg btn-block"
             data-toggle="button"
             aria-pressed="false"
             @click="onAction('hand-paper')"
@@ -68,7 +68,7 @@
         <div class="col">
           <button
             type="button"
-            class="btn btn-primary btn-lg btn-block"
+            class="btn btn-secondary btn-lg btn-block"
             data-toggle="button"
             aria-pressed="false"
             @click="onAction('hand-rock')"
@@ -80,7 +80,7 @@
         <div class="col">
           <button
             type="button"
-            class="btn btn-primary btn-lg btn-block"
+            class="btn btn-warning btn-lg btn-block"
             data-toggle="button"
             aria-pressed="false"
             @click="onAction('hand-scissors')"
@@ -92,7 +92,7 @@
         <div class="col">
           <button
             type="button"
-            class="btn btn-primary btn-lg btn-block"
+            class="btn btn-success btn-lg btn-block"
             data-toggle="button"
             aria-pressed="false"
             @click="onAction('hand-lizard')"
@@ -104,7 +104,7 @@
         <div class="col">
           <button
             type="button"
-            class="btn btn-primary btn-lg btn-block"
+            class="btn btn-info btn-lg btn-block"
             data-toggle="button"
             aria-pressed="false"
             @click="onAction('hand-spock')"
@@ -123,10 +123,13 @@
       </div>
 
       <div class="row">
-        <div class="col text-center">
-          <button @click="rulesButton()">Rules</button> |
-          <a href="#" @click="showInfo()">Information</a> | Made by
-          <a href="https://agskryp.com" target="_blank">A.G. Skryp</a>
+        <div class="col">
+          <button class="btn-link btn-sm" @click="rulesButton()">Rules</button> |
+          <button class="btn-link btn-sm" @click="showInfo()">Information</button>
+        </div>
+        
+        <div class="col text-right">
+          <small>Made by <a href="https://agskryp.com" target="_blank">A.G. Skryp</a></small>
         </div>
       </div>
 
@@ -333,11 +336,11 @@ export default {
     transform: rotate(0deg);
   }
 
-  20% {
+  30% {
     transform: rotate(0deg);
   }
 
-  80% {
+  92% {
     transform: rotate(-15deg);
   }
 
@@ -356,11 +359,11 @@ export default {
     transform: rotate(0deg);
   }
 
-  20% {
+  30% {
     transform: rotate(0deg);
   }
 
-  80% {
+  92% {
     transform: rotate(15deg);
   }
 
@@ -370,8 +373,8 @@ export default {
 }
 
 .human-icon {
-  font-size: 26vw;
-  padding: 50px 0;
+  font-size: 18vw;
+  padding: 60px 0 0;
 
   &.fa-hand-scissors,
   &.fa-hand-lizard {
@@ -386,8 +389,8 @@ export default {
 }
 
 .computer-icon {
-  font-size: 26vw;
-  padding: 50px 0;
+  font-size: 18vw;
+  padding: 60px 0 0;
 
   &.fa-hand-rock,
   &.fa-hand-paper,
