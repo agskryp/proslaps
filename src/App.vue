@@ -123,62 +123,30 @@
 
         <div class="col text-right">Loses: {{ this.counterLoses }}</div>
       </div>
-
+          
       <div class="row">
         <div class="col text-center">
-          <a href="#" @click="showModal = true">Information</a> | Made by <a href="https://agskryp.com" target="_blank">A.G. Skryp</a>
+          <button @click="rulesButton()">Rules</button> | <a href="#" @click="showInfo()">Information</a> | Made by <a href="https://agskryp.com" target="_blank">A.G. Skryp</a>
         </div>
       </div>
-      
-<!--   <button id="show-modal" @click="showModal = true">Show Modal</button>-->
-      <!-- use the modal component, pass in the prop -->
-      <div v-if="showModal" @close="showModal = false" style="    top: 0;
-    position: absolute;
-    left: 0;
-    right: 0;
-    bottom: 0;
-    display: flex;
-    justify-content: center;
-    align-items: center;">
-        <!--
-      you can use custom content here to overwrite
-      default content
-    -->
-<!--         <transition name="modal">-->
-<!--<div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">-->
-  <div class="modal-dialog" role="document">
-    <div class="modal-content">
-      <div class="modal-header">
-        <h5 class="modal-title" id="exampleModalLabel">Modal title</h5>
-        <button type="button" class="close" data-dismiss="modal" aria-label="Close" @click="showModal = false">
-          <span aria-hidden="true">&times;</span>
-        </button>
-      </div>
-      <div class="modal-body">
-        ...
-      </div>
-      <div class="modal-footer">
-        <button type="button" class="btn btn-secondary" data-dismiss="modal" @click="showModal = false">Close</button>
-        <button type="button" class="btn btn-primary">Save changes</button>
-      </div>
-    </div>
-  </div>
-<!--</div>-->
-<!--  </transition>-->
-      </div>
+
+<Information></Information>
+<RulesModal  v-if="showRulesModal"   @closeWindow="showRulesModal = false"></RulesModal>
       
     </div>
   </div>
 </template>
 
 <script>
-//import HelloWorld from "./components/HelloWorld.vue";
+import Information from "./components/Information.vue";
+import RulesModal from "./components/Rules.vue";
 
 export default {
   name: "App",
-  //  components: {
-  //    HelloWorld
-  //  }
+    components: {
+      Information,
+      RulesModal
+    },
 
   data() {
     return {
@@ -192,7 +160,7 @@ export default {
       counterDraws: 0,
       counterLoses: 0,
       actionResults: false,
-      showModal: false
+      showRulesModal: false
     };
   },
 
@@ -246,6 +214,11 @@ export default {
       if (this.humanIconGenerator == 5) {
         this.humanChoice = "hand-spock";
       }
+    },
+    
+    rulesButton() {
+      console.log( 'clicked!' );
+      this.showRulesModal = true
     },
 
     onAction(hand) {
