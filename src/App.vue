@@ -1,9 +1,9 @@
 <template>
-  <div id="app">
+  <div id="app" style="width: 100vw; height: 100vh; display: flex; align-items: center;  justify-content: center;">
     <div class="container">
       <div class="row">
         <div class="col text-center">
-          <h1>Paper, Rock, Scissors, Lizard, Spock</h1>
+          <h1>Pro Slaps!</h1>
         </div>
       </div>
       
@@ -21,7 +21,7 @@
         </div>
         
         <div class="col-2 d-flex align-items-center text-center">
-          <h2>{{ this.results }}</h2>
+          <h3>{{ this.results }}</h3>
         </div>
         
         <div class="col-5">
@@ -34,6 +34,12 @@
               :icon="this.computerChoice"
             />
           </div>
+        </div>
+      </div>
+      
+            <div class="row">
+        <div class="col text-center">
+          <h4>Custom result text here</h4>
         </div>
       </div>
       
@@ -109,24 +115,58 @@
           
         </div>
       </div>
-      
-      <div class="row">
-    
-      </div>
 
       <div class="row">
         <div class="col">Wins: {{ this.counterWins }}</div>
 
-        <div class="col">Draws: {{ this.counterDraws }}</div>
+        <div class="col text-center">Draws: {{ this.counterDraws }}</div>
 
-        <div class="col">Loses: {{ this.counterLoses }}</div>
+        <div class="col text-right">Loses: {{ this.counterLoses }}</div>
       </div>
 
       <div class="row">
-        <div class="col">
-          Made by A.G. Skryp
+        <div class="col text-center">
+          <a href="#" @click="showModal = true">Information</a> | Made by <a href="https://agskryp.com" target="_blank">A.G. Skryp</a>
         </div>
       </div>
+      
+<!--   <button id="show-modal" @click="showModal = true">Show Modal</button>-->
+      <!-- use the modal component, pass in the prop -->
+      <div v-if="showModal" @close="showModal = false" style="    top: 0;
+    position: absolute;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;">
+        <!--
+      you can use custom content here to overwrite
+      default content
+    -->
+<!--         <transition name="modal">-->
+<!--<div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">-->
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLabel">Modal title</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close" @click="showModal = false">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        ...
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-dismiss="modal" @click="showModal = false">Close</button>
+        <button type="button" class="btn btn-primary">Save changes</button>
+      </div>
+    </div>
+  </div>
+<!--</div>-->
+<!--  </transition>-->
+      </div>
+      
     </div>
   </div>
 </template>
@@ -151,7 +191,8 @@ export default {
       counterWins: 0,
       counterDraws: 0,
       counterLoses: 0,
-      actionResults: false
+      actionResults: false,
+      showModal: false
     };
   },
 
