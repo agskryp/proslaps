@@ -9,8 +9,8 @@
       <div class="row">
         <div class="col">
           <h2>User</h2>
-          
-          <div class="human-icon-container">
+
+          <div class="human-icon-container" :class="{ 'stop-animation': actionResults }">
             <font-awesome-icon
               size="5x"
               :icon="this.humanChoice"
@@ -47,7 +47,7 @@
               @click="onAction('hand-scissors')"
             >
               Scissors
-            </button>      
+            </button>
             <button
               type="button"
               class="btn btn-primary"
@@ -56,7 +56,8 @@
               @click="onAction('hand-lizard')"
             >
               Lizard
-            </button>         <button
+            </button>
+            <button
               type="button"
               class="btn btn-primary"
               data-toggle="button"
@@ -69,8 +70,8 @@
         </div>
         <div class="col">
           <h2>Computer</h2>
-          
-          <div class="computer-icon-container">
+
+          <div class="computer-icon-container" :class="{ 'stop-animation': actionResults }">
             <font-awesome-icon
               class="computer-icon"
               size="5x"
@@ -84,22 +85,15 @@
       <div class="row">
         <div class="col">
           <h2>{{ this.results }}</h2>
-    </div>
-  
-  </div>
+        </div>
+      </div>
 
       <div class="row">
-        <div class="col">
-          Wins: {{ this.counterWins }}
-        </div>
+        <div class="col">Wins: {{ this.counterWins }}</div>
 
-        <div class="col">
-          Draws: {{ this.counterDraws }}
-        </div>
+        <div class="col">Draws: {{ this.counterDraws }}</div>
 
-        <div class="col">
-          Loses: {{ this.counterLoses }}
-        </div>
+        <div class="col">Loses: {{ this.counterLoses }}</div>
       </div>
 
       <div class="row">
@@ -127,10 +121,11 @@ export default {
       humanIconGenerator: 1,
       computerChoice: "hand-scissors",
       humanChoice: "hand-rock",
-      results: '',
+      results: "",
       counterWins: 0,
       counterDraws: 0,
       counterLoses: 0,
+      actionResults: false
     };
   },
 
@@ -156,17 +151,14 @@ export default {
       if (this.computerIconGenerator == 3) {
         this.computerChoice = "hand-scissors";
       }
-      
+
       if (this.computerIconGenerator == 4) {
         this.computerChoice = "hand-lizard";
-      }  
-      
+      }
+
       if (this.computerIconGenerator == 5) {
         this.computerChoice = "hand-spock";
       }
-      
-      
-      
 
       if (this.humanIconGenerator == 1) {
         this.humanChoice = "hand-paper";
@@ -179,7 +171,7 @@ export default {
       if (this.humanIconGenerator == 3) {
         this.humanChoice = "hand-scissors";
       }
-      
+
       if (this.humanIconGenerator == 4) {
         this.humanChoice = "hand-lizard";
       }
@@ -191,6 +183,7 @@ export default {
 
     onAction(hand) {
       clearInterval(this.t);
+      this.actionResults = true;
       this.computerIconGenerator = Math.floor(Math.random() * 5 + 1);
 
       if (this.computerIconGenerator == 1) {
@@ -204,7 +197,7 @@ export default {
       if (this.computerIconGenerator == 3) {
         this.computerChoice = "hand-scissors";
       }
-      
+
       if (this.computerIconGenerator == 4) {
         this.computerChoice = "hand-lizard";
       }
@@ -212,70 +205,65 @@ export default {
       if (this.computerIconGenerator == 5) {
         this.computerChoice = "hand-spock";
       }
-      
+
       this.humanChoice = hand;
 
       if (
         (hand == "hand-rock" && this.computerChoice == "hand-scissors") ||
         (hand == "hand-rock" && this.computerChoice == "hand-lizard") ||
-        (hand == "hand-paper" && this.computerChoice == "hand-scissors") ||
-        (hand == "hand-paper" && this.computerChoice == "hand-paper") ||
+        (hand == "hand-paper" && this.computerChoice == "hand-rock") ||
+        (hand == "hand-paper" && this.computerChoice == "hand-spock") ||
         (hand == "hand-scissors" && this.computerChoice == "hand-paper") ||
         (hand == "hand-scissors" && this.computerChoice == "hand-lizard") ||
         (hand == "hand-lizard" && this.computerChoice == "hand-spock") ||
         (hand == "hand-lizard" && this.computerChoice == "hand-paper") ||
-        (hand == "hand-spock" && this.computerChoice == "hand-scissors") || 
-        (hand == "hand-spock" && this.computerChoice == "hand-rock") 
+        (hand == "hand-spock" && this.computerChoice == "hand-scissors") ||
+        (hand == "hand-spock" && this.computerChoice == "hand-rock")
       ) {
         this.counterWins++;
         this.results = "User wins!";
-      } 
-      
-      else if (
-        (hand == "hand-rock" && this.computerChoice == "hand-rock" ) ||
-        (hand == "hand-rock" && this.computerChoice == "hand-rock" ) ||
-        (hand == "hand-paper" && this.computerChoice == "hand-paper" ) ||
-        (hand == "hand-paper" && this.computerChoice == "hand-paper" ) ||
-        (hand == "hand-scissors" && this.computerChoice == "hand-scissors" ) ||
-        (hand == "hand-scissors" && this.computerChoice == "hand-scissors" ) ||
-        (hand == "hand-lizard" && this.computerChoice == "hand-lizard" ) ||
-        (hand == "hand-lizard" && this.computerChoice == "hand-lizard" ) ||
-        (hand == "hand-spock" && this.computerChoice == "hand-spock" ) ||
-        (hand == "hand-spock" && this.computerChoice == "hand-spock" ) 
+      } else if (
+        (hand == "hand-rock" && this.computerChoice == "hand-rock") ||
+        (hand == "hand-rock" && this.computerChoice == "hand-rock") ||
+        (hand == "hand-paper" && this.computerChoice == "hand-paper") ||
+        (hand == "hand-paper" && this.computerChoice == "hand-paper") ||
+        (hand == "hand-scissors" && this.computerChoice == "hand-scissors") ||
+        (hand == "hand-scissors" && this.computerChoice == "hand-scissors") ||
+        (hand == "hand-lizard" && this.computerChoice == "hand-lizard") ||
+        (hand == "hand-lizard" && this.computerChoice == "hand-lizard") ||
+        (hand == "hand-spock" && this.computerChoice == "hand-spock") ||
+        (hand == "hand-spock" && this.computerChoice == "hand-spock")
       ) {
         this.counterDraws++;
         this.results = "It's a draw!";
-      }       
-      
-      else if (
-        (hand == "hand-rock" && this.computerChoice == "hand-spock" ) ||
-        (hand == "hand-rock" && this.computerChoice == "hand-paper" ) ||
-        (hand == "hand-paper" && this.computerChoice == "hand-scissors" ) ||
-        (hand == "hand-paper" && this.computerChoice == "hand-lizard" ) ||
-        (hand == "hand-scissors" && this.computerChoice == "hand-spock" ) ||
-        (hand == "hand-scissors" && this.computerChoice == "hand-rock" ) ||
-        (hand == "hand-lizard" && this.computerChoice == "hand-scissors" ) ||
-        (hand == "hand-lizard" && this.computerChoice == "hand-rock" ) ||
-        (hand == "hand-spock" && this.computerChoice == "hand-lizard" ) ||
-        (hand == "hand-spock" && this.computerChoice == "hand-paper" ) 
+      } else if (
+        (hand == "hand-rock" && this.computerChoice == "hand-spock") ||
+        (hand == "hand-rock" && this.computerChoice == "hand-paper") ||
+        (hand == "hand-paper" && this.computerChoice == "hand-scissors") ||
+        (hand == "hand-paper" && this.computerChoice == "hand-lizard") ||
+        (hand == "hand-scissors" && this.computerChoice == "hand-spock") ||
+        (hand == "hand-scissors" && this.computerChoice == "hand-rock") ||
+        (hand == "hand-lizard" && this.computerChoice == "hand-scissors") ||
+        (hand == "hand-lizard" && this.computerChoice == "hand-rock") ||
+        (hand == "hand-spock" && this.computerChoice == "hand-lizard") ||
+        (hand == "hand-spock" && this.computerChoice == "hand-paper")
       ) {
         this.counterLoses++;
         this.results = "Computer Wins";
       }
 
-      setTimeout( () => {     
+      setTimeout(() => {
         this.t = setInterval(() => {
           this.onIdleScreen();
         }, 1000);
-        
+
+        this.actionResults = false;
         this.results = "Play again?";
       }, 3000);
     }
   },
 
-  created: function() {
-
-  }
+  created: function() {}
 };
 </script>
 
@@ -289,58 +277,62 @@ export default {
   margin-top: 60px;
 }
   
-  .human-icon-container {
-    animation: humanHandShuffle 1s ease infinite;
-    transform-origin: 10% 90%;
+.stop-animation {
+  animation: none !important;
+}
+
+.human-icon-container {
+  animation: humanHandShuffle 1s ease infinite;
+  transform-origin: 10% 90%;
+}
+
+@keyframes humanHandShuffle {
+  0% {
+    transform: rotate(0deg);
   }
 
-  @keyframes humanHandShuffle {
-    0% {
-      transform: rotate(0deg);
-    }
-    
-    20% {
-      transform: rotate(0deg);
-    }
-    
-    80% {
-      transform: rotate(-15deg);
-    }
-    
-    100% {
-      transform: rotate(0deg);
-    }
-  }
-  
-  .computer-icon-container {
-    animation: computerHandShuffle 1s ease infinite;
-    transform-origin: 90% 90%;
+  20% {
+    transform: rotate(0deg);
   }
 
-  @keyframes computerHandShuffle {
-    0% {
-      transform: rotate(0deg);
-    }
-    
-    20% {
-      transform: rotate(0deg);
-    }
-    
-    80% {
-      transform: rotate(15deg);
-    }
-    
-    100% {
-      transform: rotate(0deg);
-    }
+  80% {
+    transform: rotate(-15deg);
   }
-  
+
+  100% {
+    transform: rotate(0deg);
+  }
+}
+
+.computer-icon-container {
+  animation: computerHandShuffle 1s ease infinite;
+  transform-origin: 90% 90%;
+}
+
+@keyframes computerHandShuffle {
+  0% {
+    transform: rotate(0deg);
+  }
+
+  20% {
+    transform: rotate(0deg);
+  }
+
+  80% {
+    transform: rotate(15deg);
+  }
+
+  100% {
+    transform: rotate(0deg);
+  }
+}
+
 .human-icon {
   font-size: 20em;
   padding: 50px 0;
 
   &.fa-hand-scissors,
-  &.fa-hand-lizard{
+  &.fa-hand-lizard {
     transform: scaleX(-1);
   }
 
@@ -357,7 +349,7 @@ export default {
 
   &.fa-hand-rock,
   &.fa-hand-paper,
-  &.fa-hand-spock{
+  &.fa-hand-spock {
     transform: scaleX(-1) rotate(90deg);
   }
 }
