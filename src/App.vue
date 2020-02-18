@@ -2,13 +2,14 @@
   <div id="app">
     <div class="container">
       <div class="row">
-        <div class="col">
+        <div class="col text-center">
           <h1>Paper, Rock, Scissors, Lizard, Spock</h1>
         </div>
       </div>
+      
       <div class="row">
-        <div class="col">
-          <h2>User</h2>
+        <div class="col-5">
+          <h2 class="text-center">User</h2>
 
           <div class="human-icon-container" :class="{ 'stop-animation': actionResults }">
             <font-awesome-icon
@@ -17,75 +18,100 @@
               class="human-icon"
             />
           </div>
-
-          <div>
-            <button
-              type="button"
-              class="btn btn-primary"
-              data-toggle="button"
-              aria-pressed="false"
-              @click="onAction('hand-paper')"
-            >
-              Paper
-            </button>
-
-            <button
-              type="button"
-              class="btn btn-primary"
-              data-toggle="button"
-              aria-pressed="false"
-              @click="onAction('hand-rock')"
-            >
-              Rock
-            </button>
-
-            <button
-              type="button"
-              class="btn btn-primary"
-              data-toggle="button"
-              aria-pressed="false"
-              @click="onAction('hand-scissors')"
-            >
-              Scissors
-            </button>
-            <button
-              type="button"
-              class="btn btn-primary"
-              data-toggle="button"
-              aria-pressed="false"
-              @click="onAction('hand-lizard')"
-            >
-              Lizard
-            </button>
-            <button
-              type="button"
-              class="btn btn-primary"
-              data-toggle="button"
-              aria-pressed="false"
-              @click="onAction('hand-spock')"
-            >
-              Spock
-            </button>
-          </div>
         </div>
-        <div class="col">
-          <h2>Computer</h2>
+        
+        <div class="col-2 d-flex align-items-center text-center">
+          <h2>{{ this.results }}</h2>
+        </div>
+        
+        <div class="col-5">
+          <h2 class="text-center">Computer</h2>
 
-          <div class="computer-icon-container" :class="{ 'stop-animation': actionResults }">
+          <div class="computer-icon-container text-right" :class="{ 'stop-animation': actionResults }">
             <font-awesome-icon
               class="computer-icon"
               size="5x"
               :icon="this.computerChoice"
             />
           </div>
-
-          <div>Is thinking...</div>
         </div>
       </div>
+      
       <div class="row">
         <div class="col">
-          <h2>{{ this.results }}</h2>
+                    
+            <button
+              type="button"
+              class="btn btn-primary btn-lg btn-block"
+              data-toggle="button"
+              aria-pressed="false"
+              @click="onAction('hand-paper')"
+            >
+              Paper
+            </button>
+  </div>
+
+        
+        <div class="col">
+            <button
+              type="button"
+              class="btn btn-primary btn-lg btn-block"
+              data-toggle="button"
+              aria-pressed="false"
+              @click="onAction('hand-rock')"
+            >
+              Rock
+            </button>
+          
+          </div>
+
+        
+        <div class="col">
+
+            <button
+              type="button"
+              class="btn btn-primary btn-lg btn-block"
+              data-toggle="button"
+              aria-pressed="false"
+              @click="onAction('hand-scissors')"
+            >
+              Scissors
+            </button>
+          
+          </div>
+
+        
+        <div class="col">
+          
+            <button
+              type="button"
+              class="btn btn-primary btn-lg btn-block"
+              data-toggle="button"
+              aria-pressed="false"
+              @click="onAction('hand-lizard')"
+            >
+              Lizard
+            </button>
+          </div>
+
+        
+        <div class="col">
+          
+            <button
+              type="button"
+              class="btn btn-primary btn-lg btn-block"
+              data-toggle="button"
+              aria-pressed="false"
+              @click="onAction('hand-spock')"
+            >
+              Spock
+            </button>
+          
         </div>
+      </div>
+      
+      <div class="row">
+    
       </div>
 
       <div class="row">
@@ -269,12 +295,12 @@ export default {
 
 <style lang="scss">
 #app {
-  font-family: Avenir, Helvetica, Arial, sans-serif;
+/*  font-family: Avenir, Helvetica, Arial, sans-serif;*/
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  text-align: center;
-  color: #2c3e50;
-  margin-top: 60px;
+/*  text-align: center;*/
+/*  color: #2c3e50;*/
+/*  margin-top: 60px;*/
 }
   
 .stop-animation {
@@ -328,7 +354,7 @@ export default {
 }
 
 .human-icon {
-  font-size: 20em;
+  font-size: 26vw;
   padding: 50px 0;
 
   &.fa-hand-scissors,
@@ -344,7 +370,7 @@ export default {
 }
 
 .computer-icon {
-  font-size: 20em;
+  font-size: 26vw;
   padding: 50px 0;
 
   &.fa-hand-rock,
