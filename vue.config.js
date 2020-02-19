@@ -1,10 +1,12 @@
-const path = require("path");
+//const path = require("path");
 
 module.exports = {
   pluginOptions: {
-    'style-resources-loader': {
-      preProcessor: 'scss',
-      patterns: ['/Users/ag87/_WebDev/_GitHubProjects/paper-rock-scissor/src/styles/main.scss']
+    "style-resources-loader": {
+      preProcessor: "scss",
+      patterns: [
+        "/Users/ag87/_WebDev/_GitHubProjects/paper-rock-scissor/src/styles/main.scss"
+      ]
     }
   },
 
