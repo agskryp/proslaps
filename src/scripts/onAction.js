@@ -1,5 +1,4 @@
 export default {
-
   mounted() {
     this.t = setInterval(() => {
       this.onIdleScreen();
@@ -95,5 +94,5 @@ export default {
         this.message = "Computer is thinking...";
       }, 3000);
     }
-  },
+  }
 };
