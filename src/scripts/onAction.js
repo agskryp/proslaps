@@ -47,6 +47,22 @@ export default {
       ) {
         this.counterWins++;
         this.results = "User wins!";
+
+        if (hand == "hand-rock" && this.computerChoice == "hand-scissors") {
+          this.message = "Those scissors couldn't cut through butter";
+        }
+
+        if (hand == "hand-scissors" && this.computerChoice == "hand-paper") {
+          this.message = "Sliding through like skates on ice";
+        }
+
+        if (hand == "hand-scissors" && this.computerChoice == "hand-lizard") {
+          this.message = "Like a hunter on the prowl";
+        }
+
+        if (hand == "hand-lizard" && this.computerChoice == "hand-paper") {
+          this.message = "Getting a good source of fiber";
+        }
       } else if (
         (hand == "hand-rock" && this.computerChoice == "hand-rock") ||
         (hand == "hand-paper" && this.computerChoice == "hand-paper") ||
@@ -57,12 +73,24 @@ export default {
         this.counterDraws++;
         this.results = "It's a draw!";
 
+        if (hand == "hand-rock" && this.computerChoice == "hand-rock") {
+          this.message = "Between a rock and a hard place";
+        }
+
+        if (hand == "hand-paper" && this.computerChoice == "hand-paper") {
+          this.message = "Extra Extra!";
+        }
+
         if (hand == "hand-scissors" && this.computerChoice == "hand-scissors") {
           this.message = "En Garde!";
         }
 
+        if (hand == "hand-lizard" && this.computerChoice == "hand-lizard") {
+          this.message = "Two lizards walk into a bar";
+        }
+
         if (hand == "hand-spock" && this.computerChoice == "hand-spock") {
-          this.message = "Great Spocks think alike";
+          this.message = "Great Spocks think alike!";
         }
       } else if (
         (hand == "hand-rock" && this.computerChoice == "hand-spock") ||
@@ -80,7 +108,11 @@ export default {
         this.results = "Computer Wins";
 
         if (hand == "hand-paper" && this.computerChoice == "hand-scissors") {
-          this.message = "Snip Snip!";
+          this.message = "Snip snip sinp!";
+        }
+
+        if (hand == "hand-paper" && this.computerChoice == "hand-lizard") {
+          this.message = "Gonna have to take a shower after this";
         }
       }
 
