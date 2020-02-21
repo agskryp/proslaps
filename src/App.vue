@@ -312,7 +312,7 @@ export default {
       ) {
         this.counterLoses++;
         this.results = "Computer Wins";
-        
+
         if (hand == "hand-paper" && this.computerChoice == "hand-scissors") {
           this.message = "Snip Snip!";
         }
