@@ -15,28 +15,33 @@
         </div>
         <div class="modal-body">
           <h4>What is Pro Slaps?</h4>
-          
-          <p>Pro Slaps! is an extension of the traditional Rock, Paper, Scissors, with Lizard and Spock being additional choices.</p>
-          
-          <p>The name <b>Pro Slaps!</b> is from combining and rearranging the first couple of letters of each hand gesture.</p>
-          
+
+          <p>
+            Pro Slaps! is an extension of the traditional Rock, Paper, Scissors,
+            with Lizard and Spock being additional choices.
+          </p>
+
+          <p>
+            The name <b>Pro Slaps!</b> is from combining and rearranging the
+            first couple of letters of each hand gesture.
+          </p>
+
           <h4>Credits</h4>
-          
-          <p>Pro Slaps! was designed and developed by <a href="https://agskryp.com" target="_blank">Andrew Skrypnyk</a> using:</p>
-          
+
+          <p>
+            Pro Slaps! was designed and developed by
+            <a href="https://agskryp.com" target="_blank">Andrew Skrypnyk</a>
+            using:
+          </p>
+
           <ul>
             <li>Vue v2.6.11</li>
             <li>Bootstrap v4.4.1</li>
             <li>Font Awesome v4.7.0</li>
-          </ul>            
-          
+          </ul>
         </div>
         <div class="modal-footer">
-          <button
-            type="button"
-            class="btn btn-secondary"
-            @click="closeInfo()"
-          >
+          <button type="button" class="btn btn-secondary" @click="closeInfo()">
             Close
           </button>
         </div>

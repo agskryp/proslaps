@@ -2,7 +2,7 @@ export default {
   methods: {
     computerIcon: function() {
       this.computerIconGenerator = Math.floor(Math.random() * 5 + 1);
-      
+
       if (this.computerIconGenerator == 1) {
         this.computerChoice = "hand-paper";
       }
@@ -48,6 +48,6 @@ export default {
       if (this.humanIconGenerator == 5) {
         this.humanChoice = "hand-spock";
       }
-    },
+    }
   }
-}
+};

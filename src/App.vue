@@ -151,6 +151,13 @@
   </div>
 </template>
 
+<style lang="scss">
+#app {
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+</style>
+
 <script>
 import InfoModal from "./components/Info.vue";
 import RulesModal from "./components/Rules.vue";
@@ -203,87 +210,3 @@ export default {
   created: function() {}
 };
 </script>
-
-<style lang="scss">
-#app {
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-}
-
-.stop-animation {
-  animation: none !important;
-}
-
-.human-icon-container {
-  animation: humanHandShuffle 1s ease infinite;
-  transform-origin: 10% 90%;
-}
-
-@keyframes humanHandShuffle {
-  0% {
-    transform: rotate(0deg);
-  }
-
-  30% {
-    transform: rotate(0deg);
-  }
-
-  92% {
-    transform: rotate(-15deg);
-  }
-
-  100% {
-    transform: rotate(0deg);
-  }
-}
-
-.computer-icon-container {
-  animation: computerHandShuffle 1s ease infinite;
-  transform-origin: 90% 90%;
-}
-
-@keyframes computerHandShuffle {
-  0% {
-    transform: rotate(0deg);
-  }
-
-  30% {
-    transform: rotate(0deg);
-  }
-
-  92% {
-    transform: rotate(15deg);
-  }
-
-  100% {
-    transform: rotate(0deg);
-  }
-}
-
-.human-icon {
-  font-size: 18vw;
-  padding: 60px 0 0;
-
-  &.fa-hand-scissors,
-  &.fa-hand-lizard {
-    transform: scaleX(-1);
-  }
-
-  &.fa-hand-rock,
-  &.fa-hand-paper,
-  &.fa-hand-spock {
-    transform: rotate(90deg);
-  }
-}
-
-.computer-icon {
-  font-size: 18vw;
-  padding: 60px 0 0;
-
-  &.fa-hand-rock,
-  &.fa-hand-paper,
-  &.fa-hand-spock {
-    transform: scaleX(-1) rotate(90deg);
-  }
-}
-</style>
