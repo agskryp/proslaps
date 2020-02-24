@@ -11,7 +11,7 @@ export default {
         this.idleScreen();
         this.actionResults = false;
         this.results = "Play again?";
-        this.message = "Computer is thinking...";
+        this.message = "";
       }, 3000);
     },
 

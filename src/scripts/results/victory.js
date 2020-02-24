@@ -15,7 +15,7 @@ export default {
       ) {
         this.counterWins++;
         this.results = "User wins!";
-        this.message = "U A WINNA HA HA HA!";
+        this.message = "Winner winner chicken dinner!";
 
         if (hand == "hand-rock" && this.computerChoice == "hand-scissors") {
           this.message = "Those scissors couldn't cut through butter";
