@@ -1,10 +1,4 @@
 export default {
-  mounted() {
-    this.t = setInterval(() => {
-      this.onIdleScreen();
-    }, 1000);
-  },
-
   methods: {
     onAction(hand) {
       clearInterval(this.t);
