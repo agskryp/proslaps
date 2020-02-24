@@ -12,7 +12,7 @@
 
       <div class="row">
         <div class="col-5">
-          <h2 class="text-center">User</h2>
+          <h3 class="text-center">User</h3>
 
           <div
             class="human-icon-container text-center"
@@ -27,11 +27,11 @@
         </div>
 
         <div class="col-2 d-flex align-items-center text-center">
-          <h3>{{ this.results }}</h3>
+          <h2>{{ this.results }}</h2>
         </div>
 
         <div class="col-5">
-          <h2 class="text-center">Computer</h2>
+          <h3 class="text-center">Computer</h3>
 
           <div
             class="computer-icon-container text-center"
@@ -114,12 +114,18 @@
         </div>
       </div>
 
-      <div class="row">
-        <div class="col">Wins: {{ this.counterWins }}</div>
+      <div class="row mt-2 mb-2">
+        <div class="col">
+          <b>Wins: {{ this.counterWins }}</b>
+        </div>
 
-        <div class="col text-center">Draws: {{ this.counterDraws }}</div>
+        <div class="col text-center">
+          <b>Draws: {{ this.counterDraws }}</b>
+        </div>
 
-        <div class="col text-right">Loses: {{ this.counterLoses }}</div>
+        <div class="col text-right">
+          <b>Loses: {{ this.counterLoses }}</b>
+        </div>
       </div>
 
       <div class="row">
