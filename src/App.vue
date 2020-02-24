@@ -1,8 +1,5 @@
 <template>
-  <div
-    id="app"
-    style="width: 100vw; height: 100vh; display: flex; align-items: center;  justify-content: center;"
-  >
+  <div id="ProSlaps">
     <div class="container">
       <div class="row">
         <div class="col text-center">
