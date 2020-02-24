@@ -1,0 +1,27 @@
+.human-icon-container {
+  animation: humanHandShuffle 1s ease infinite;
+  transform-origin: 10% 90%;
+}
+
+@keyframes humanHandShuffle {
+  0% { transform: rotate( 0deg ); }
+  30% { transform: rotate( 0deg ); }
+  92% { transform: rotate( -15deg ); }
+  100% { transform: rotate( 0deg ); }
+}
+
+.computer-icon-container {
+  animation: computerHandShuffle 1s ease infinite;
+  transform-origin: 90% 90%;
+}
+
+@keyframes computerHandShuffle {
+  0% { transform: rotate( 0deg ); }
+  30% { transform: rotate( 0deg ); }
+  92% { transform: rotate( 15deg ); }
+  100% { transform: rotate( 0deg ); }
+}
+
+.stop-animation {
+  animation: none !important;
+}

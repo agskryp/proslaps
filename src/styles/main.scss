@@ -1,9 +1,3 @@
-html,
-body {
-  //  color: yellow;
-  //  background: limegreen;
-}
-
 .modal-container {
   top: 0;
   position: absolute;
@@ -15,3 +9,6 @@ body {
   align-items: center;
   background: rgba( 0, 0, 0, .5 );
 }
+
+@import "animation";
+@import "icon";

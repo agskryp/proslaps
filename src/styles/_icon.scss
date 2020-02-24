@@ -1,0 +1,26 @@
+.human-icon {
+  font-size: 18vw;
+  padding: 60px 0 0;
+
+  &.fa-hand-scissors,
+  &.fa-hand-lizard {
+    transform: scaleX(-1);
+  }
+
+  &.fa-hand-rock,
+  &.fa-hand-paper,
+  &.fa-hand-spock {
+    transform: rotate(90deg);
+  }
+}
+
+.computer-icon {
+  font-size: 18vw;
+  padding: 60px 0 0;
+
+  &.fa-hand-rock,
+  &.fa-hand-paper,
+  &.fa-hand-spock {
+    transform: scaleX(-1) rotate(90deg);
+  }
+}
