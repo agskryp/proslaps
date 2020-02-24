@@ -1,17 +1,14 @@
+import victory from "@/scripts/results/victory.js";
+
 export default {
-  // mounted() {
-  //   this.invocation();
-  // },
+
+  mixins: [victory],
 
   methods: {
     invocation() {
-      // console.log( 'invocation called, pause on animation' );
-
       this.createPause;
 
       this.createPause = setTimeout(() => {
-        // console.log( '3 seconds have passed, resume idle screen' );
-
         this.t = setInterval(() => {
           this.onIdleScreen();
         }, 1000);
@@ -31,37 +28,9 @@ export default {
 
       this.humanChoice = hand;
 
+      this.victory(hand);
+
       if (
-        (hand == "hand-rock" && this.computerChoice == "hand-scissors") ||
-        (hand == "hand-rock" && this.computerChoice == "hand-lizard") ||
-        (hand == "hand-paper" && this.computerChoice == "hand-rock") ||
-        (hand == "hand-paper" && this.computerChoice == "hand-spock") ||
-        (hand == "hand-scissors" && this.computerChoice == "hand-paper") ||
-        (hand == "hand-scissors" && this.computerChoice == "hand-lizard") ||
-        (hand == "hand-lizard" && this.computerChoice == "hand-spock") ||
-        (hand == "hand-lizard" && this.computerChoice == "hand-paper") ||
-        (hand == "hand-spock" && this.computerChoice == "hand-scissors") ||
-        (hand == "hand-spock" && this.computerChoice == "hand-rock")
-      ) {
-        this.counterWins++;
-        this.results = "User wins!";
-
-        if (hand == "hand-rock" && this.computerChoice == "hand-scissors") {
-          this.message = "Those scissors couldn't cut through butter";
-        }
-
-        if (hand == "hand-scissors" && this.computerChoice == "hand-paper") {
-          this.message = "Sliding through like skates on ice";
-        }
-
-        if (hand == "hand-scissors" && this.computerChoice == "hand-lizard") {
-          this.message = "Like a hunter on the prowl";
-        }
-
-        if (hand == "hand-lizard" && this.computerChoice == "hand-paper") {
-          this.message = "Getting a good source of fiber";
-        }
-      } else if (
         (hand == "hand-rock" && this.computerChoice == "hand-rock") ||
         (hand == "hand-paper" && this.computerChoice == "hand-paper") ||
         (hand == "hand-scissors" && this.computerChoice == "hand-scissors") ||
