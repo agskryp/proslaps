@@ -31,7 +31,7 @@ export default {
       }
     },
 
-    onIdleScreen: function() {
+    idleAnimations: function() {
       this.computerIcon();
 
       this.humanIconRNG = Math.floor(Math.random() * 5 + 1);

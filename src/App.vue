@@ -45,15 +45,20 @@
 
       <div class="row">
         <div class="col text-center">
-          <h4>{{ this.message }}</h4>
+          <h4 v-if="this.message !== ''">{{ this.message }}</h4>
+          <h4 v-if="this.message === ''" class="ellipsis-anim">
+            Computer is thinking<span>.</span><span>.</span><span>.</span>
+          </h4>
         </div>
       </div>
 
+<div class="row">
+  <div class="col-md-10 mx-auto">
       <div class="row">
-        <div class="col">
+        <div class="col-12 col-md mt-2 mb-2">
           <button
             type="button"
-            class="btn btn-light btn-lg btn-block"
+            class="btn btn-light btn-block"
             data-toggle="button"
             aria-pressed="false"
             @click="onAction('hand-paper')"
@@ -62,10 +67,10 @@
           </button>
         </div>
 
-        <div class="col">
+        <div class="col-12 col-md mt-2 mb-2">
           <button
             type="button"
-            class="btn btn-secondary btn-lg btn-block"
+            class="btn btn-secondary btn-block"
             data-toggle="button"
             aria-pressed="false"
             @click="onAction('hand-rock')"
@@ -74,10 +79,10 @@
           </button>
         </div>
 
-        <div class="col">
+        <div class="col-12 col-md mt-2 mb-2">
           <button
             type="button"
-            class="btn btn-warning btn-lg btn-block"
+            class="btn btn-warning btn-block"
             data-toggle="button"
             aria-pressed="false"
             @click="onAction('hand-scissors')"
@@ -86,10 +91,10 @@
           </button>
         </div>
 
-        <div class="col">
+        <div class="col-12 col-md mt-2 mb-2">
           <button
             type="button"
-            class="btn btn-success btn-lg btn-block"
+            class="btn btn-success btn-block"
             data-toggle="button"
             aria-pressed="false"
             @click="onAction('hand-lizard')"
@@ -98,10 +103,10 @@
           </button>
         </div>
 
-        <div class="col">
+        <div class="col-12 col-md mt-2 mb-2">
           <button
             type="button"
-            class="btn btn-info btn-lg btn-block"
+            class="btn btn-info btn-block"
             data-toggle="button"
             aria-pressed="false"
             @click="onAction('hand-spock')"
@@ -110,34 +115,40 @@
           </button>
         </div>
       </div>
-
-      <div class="row mt-2 mb-2">
-        <div class="col">
-          <b>Wins: {{ this.counterWins }}</b>
-        </div>
-
-        <div class="col text-center">
-          <b>Draws: {{ this.counterDraws }}</b>
-        </div>
-
-        <div class="col text-right">
-          <b>Loses: {{ this.counterLoses }}</b>
-        </div>
-      </div>
+  </div>
+</div>
 
       <div class="row">
-        <div class="col">
-          <button class="btn-link btn-sm" @click="rulesButton()">Rules</button>
-          |
-          <button class="btn-link btn-sm" @click="infoButton()">
-            Information
-          </button>
-        </div>
+        <div class="col-md-8 mx-auto">
+          <div class="row mt-2 mb-2">
+              <div class="col">
+                <b>Wins: {{ this.counterWins }}</b>
+              </div>
 
-        <div class="col text-right">
-          <small>Made by 
-            <a href="https://agskryp.com" target="_blank">A.G. Skryp</a>
-          </small>
+              <div class="col text-center">
+                <b>Draws: {{ this.counterDraws }}</b>
+              </div>
+
+              <div class="col text-right">
+                <b>Loses: {{ this.counterLoses }}</b>
+              </div>
+            </div>
+
+          <div class="row">
+            <div class="col">
+              <button class="btn-link btn-sm" @click="rulesButton()">Rules</button>
+              |
+              <button class="btn-link btn-sm" @click="infoButton()">
+                Information
+              </button>
+            </div>
+
+            <div class="col text-right">
+              <small>Made by 
+                <a href="https://agskryp.com" target="_blank">A.G. Skryp</a>
+              </small>
+            </div>
+          </div>
         </div>
       </div>
 
@@ -180,7 +191,7 @@ export default {
       actionResults: false,
       showRulesModal: false,
       showInfoModal: false,
-      message: "Computer is thinking..."
+      message: ""
     };
   },
 
@@ -191,7 +202,7 @@ export default {
   methods: {
     idleScreen() {
       this.idleTimer = setInterval(() => {
-        this.onIdleScreen();
+        this.idleAnimations();
       }, 1000);
     },
 
