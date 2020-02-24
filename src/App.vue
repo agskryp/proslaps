@@ -142,14 +142,8 @@
         </div>
       </div>
 
-      <InfoModal
-        v-if="showInfoModal"
-        @closeWindow="showInfoModal = false"
-      ></InfoModal>
-      <RulesModal
-        v-if="showRulesModal"
-        @closeWindow="showRulesModal = false"
-      ></RulesModal>
+      <InfoModal v-if="showInfoModal" @closeWindow="showInfoModal = false" />
+      <RulesModal v-if="showRulesModal" @closeWindow="showRulesModal = false" />
     </div>
   </div>
 </template>
