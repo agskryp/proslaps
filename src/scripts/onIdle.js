@@ -1,9 +1,8 @@
 export default {
   methods: {
-    onIdleScreen: function() {
+    computerIcon: function() {
       this.computerIconGenerator = Math.floor(Math.random() * 5 + 1);
-      this.humanIconGenerator = Math.floor(Math.random() * 5 + 1);
-
+      
       if (this.computerIconGenerator == 1) {
         this.computerChoice = "hand-paper";
       }
@@ -23,6 +22,12 @@ export default {
       if (this.computerIconGenerator == 5) {
         this.computerChoice = "hand-spock";
       }
+    },
+
+    onIdleScreen: function() {
+      this.computerIcon();
+
+      this.humanIconGenerator = Math.floor(Math.random() * 5 + 1);
 
       if (this.humanIconGenerator == 1) {
         this.humanChoice = "hand-paper";

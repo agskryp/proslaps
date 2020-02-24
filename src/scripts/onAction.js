@@ -3,27 +3,8 @@ export default {
     onAction(hand) {
       clearInterval(this.t);
       this.actionResults = true;
-      this.computerIconGenerator = Math.floor(Math.random() * 5 + 1);
 
-      if (this.computerIconGenerator == 1) {
-        this.computerChoice = "hand-paper";
-      }
-
-      if (this.computerIconGenerator == 2) {
-        this.computerChoice = "hand-rock";
-      }
-
-      if (this.computerIconGenerator == 3) {
-        this.computerChoice = "hand-scissors";
-      }
-
-      if (this.computerIconGenerator == 4) {
-        this.computerChoice = "hand-lizard";
-      }
-
-      if (this.computerIconGenerator == 5) {
-        this.computerChoice = "hand-spock";
-      }
+      this.computerIcon();
 
       this.humanChoice = hand;
 
