@@ -7,13 +7,8 @@ export default {
 
   methods: {
     invocation() {
-      this.createPause;
-
       this.createPause = setTimeout(() => {
-        this.t = setInterval(() => {
-          this.onIdleScreen();
-        }, 1000);
-
+        this.idleScreen();
         this.actionResults = false;
         this.results = "Play again?";
         this.message = "Computer is thinking...";
@@ -21,7 +16,7 @@ export default {
     },
 
     onAction(hand) {
-      clearInterval(this.t);
+      clearInterval(this.idleTimer);
       this.actionResults = true;
 
       this.computerIcon();

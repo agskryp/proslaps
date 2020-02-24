@@ -135,10 +135,9 @@
         </div>
 
         <div class="col text-right">
-          <small
-            >Made by
-            <a href="https://agskryp.com" target="_blank">A.G. Skryp</a></small
-          >
+          <small>Made by 
+            <a href="https://agskryp.com" target="_blank">A.G. Skryp</a>
+          </small>
         </div>
       </div>
 
@@ -172,9 +171,6 @@ export default {
 
   data() {
     return {
-      idleScreen: true,
-      computerIconGenerator: 1,
-      humanIconGenerator: 1,
       computerChoice: "hand-scissors",
       humanChoice: "hand-rock",
       results: "",
@@ -189,12 +185,16 @@ export default {
   },
 
   mounted() {
-    this.t = setInterval(() => {
-      this.onIdleScreen();
-    }, 1000);
+    this.idleScreen();
   },
 
   methods: {
+    idleScreen() {
+      this.idleTimer = setInterval(() => {
+        this.onIdleScreen();
+      }, 1000);
+    },
+
     rulesButton() {
       this.showRulesModal = true;
     },
