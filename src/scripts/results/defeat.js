@@ -15,7 +15,7 @@ export default {
       ) {
         this.counterLoses++;
         this.results = "Computer Wins";
-        this.message = "U Lose!  U Lose!"
+        this.message = "U Lose!  U Lose!";
 
         if (hand == "hand-paper" && this.computerChoice == "hand-scissors") {
           this.message = "Snip snip sinp!";
