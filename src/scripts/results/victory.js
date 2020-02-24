@@ -1,8 +1,8 @@
 export default {
-methods: {
-  victory(hand) {
-    if (
-      (hand == "hand-rock" && this.computerChoice == "hand-scissors") ||
+  methods: {
+    victory(hand) {
+      if (
+        (hand == "hand-rock" && this.computerChoice == "hand-scissors") ||
         (hand == "hand-rock" && this.computerChoice == "hand-lizard") ||
         (hand == "hand-paper" && this.computerChoice == "hand-rock") ||
         (hand == "hand-paper" && this.computerChoice == "hand-spock") ||
@@ -32,8 +32,7 @@ methods: {
         if (hand == "hand-lizard" && this.computerChoice == "hand-paper") {
           this.message = "Getting a good source of fiber";
         }
-      }  
+      }
     }
   }
-}
-
+};
