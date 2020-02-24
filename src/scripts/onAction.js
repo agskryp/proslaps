@@ -1,5 +1,28 @@
 export default {
+  // mounted() {
+  //   this.invocation();
+  // },
+
   methods: {
+    invocation() {
+      // console.log( 'invocation called, pause on animation' );
+
+      this.createPause;
+
+      this.createPause = setTimeout(() => {
+        // console.log( '3 seconds have passed, resume idle screen' );
+
+        this.t = setInterval(() => {
+          this.onIdleScreen();
+        }, 1000);
+
+        this.actionResults = false;
+        this.results = "Play again?";
+        this.message = "Computer is thinking...";
+      }, 3000);
+    },
+
+
     onAction(hand) {
       clearInterval(this.t);
       this.actionResults = true;
@@ -91,15 +114,8 @@ export default {
         }
       }
 
-      setTimeout(() => {
-        this.t = setInterval(() => {
-          this.onIdleScreen();
-        }, 1000);
-
-        this.actionResults = false;
-        this.results = "Play again?";
-        this.message = "Computer is thinking...";
-      }, 3000);
+      clearTimeout( this.createPause );
+      this.invocation();
     }
   }
 };
