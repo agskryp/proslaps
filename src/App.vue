@@ -3,13 +3,16 @@
     <div class="container">
       <div class="row">
         <div class="col text-center">
-          <h1>Pro Slaps!</h1>
+          <h1>
+            <span class="font-weight-bold">Pro</span>
+            <span class="font-italic">Slaps!</span>
+          </h1>
         </div>
       </div>
 
       <div class="row">
         <div class="col-5">
-          <h3 class="text-center">User</h3>
+          <span class="text-center h4 d-block">User</span>
 
           <div
             class="human-icon-container text-center"
@@ -24,11 +27,11 @@
         </div>
 
         <div class="col-2 d-flex align-items-center text-center">
-          <h2>{{ this.results }}</h2>
+          <p class="h3">{{ this.results }}</p>
         </div>
 
         <div class="col-5">
-          <h3 class="text-center">Computer</h3>
+          <span class="text-center h4 d-block">Computer</span>
 
           <div
             class="computer-icon-container text-center"
@@ -45,11 +48,11 @@
 
       <div class="row">
         <div class="col text-center">
-          <h4 v-if="this.message !== ''">{{ this.message }}</h4>
+          <p class="h4" v-if="this.message !== ''">{{ this.message }}</p>
 
-          <h4 v-if="this.message === ''" class="ellipsis-anim">
+          <p v-if="this.message === ''" class="ellipsis-anim h4">
             Computer is thinking<span>.</span><span>.</span><span>.</span>
-          </h4>
+          </p>
         </div>
       </div>
 
@@ -79,20 +82,32 @@
 
           <div class="row">
             <div class="col">
-              <button class="btn-link btn-sm" @click="rulesButton()">
+              <button 
+                class="btn-link btn-sm text-decoration-none"
+                @click="rulesButton()"
+              >
                 Rules
               </button>
               |
-              <button class="btn-link btn-sm" @click="infoButton()">
+              <button 
+                class="btn-link btn-sm text-decoration-none"
+                @click="infoButton()"
+              >
                 Information
               </button>
             </div>
 
             <div class="col text-right">
-              <small
+              <span class="d-block h6"
                 >Made by
-                <a href="https://agskryp.com" target="_blank">A.G. Skryp</a>
-              </small>
+                <a
+                  href="https://agskryp.com"
+                  class="text-decoration-none"
+                  target="_blank"
+                >
+                  A.G. Skryp
+                </a>
+              </span>
             </div>
           </div>
         </div>

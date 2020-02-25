@@ -5,7 +5,7 @@
         <div class="col-12 col-md mt-2 mb-2">
           <button
             type="button"
-            class="btn btn-light btn-block"
+            class="btn btn-light btn-block btn-lg"
             data-toggle="button"
             aria-pressed="false"
             @click="$emit('paper')"
@@ -17,7 +17,7 @@
         <div class="col-12 col-md mt-2 mb-2">
           <button
             type="button"
-            class="btn btn-secondary btn-block"
+            class="btn btn-secondary btn-block btn-lg"
             data-toggle="button"
             aria-pressed="false"
             @click="$emit('rock')"
@@ -29,7 +29,7 @@
         <div class="col-12 col-md mt-2 mb-2">
           <button
             type="button"
-            class="btn btn-warning btn-block"
+            class="btn btn-warning btn-block btn-lg"
             data-toggle="button"
             aria-pressed="false"
             @click="$emit('scissors')"
@@ -41,7 +41,7 @@
         <div class="col-12 col-md mt-2 mb-2">
           <button
             type="button"
-            class="btn btn-success btn-block"
+            class="btn btn-success btn-block btn-lg"
             data-toggle="button"
             aria-pressed="false"
             @click="$emit('lizard')"
@@ -53,7 +53,7 @@
         <div class="col-12 col-md mt-2 mb-2">
           <button
             type="button"
-            class="btn btn-info btn-block"
+            class="btn btn-info btn-block btn-lg"
             data-toggle="button"
             aria-pressed="false"
             @click="$emit('spock')"
@@ -66,7 +66,11 @@
   </div>
 </template>
 
-<style></style>
+<style>
+.btn-light {
+  border: 1px solid #dae0e5;
+}
+</style>
 
 <script>
 export default {
