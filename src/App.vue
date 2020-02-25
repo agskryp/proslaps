@@ -46,6 +46,7 @@
       <div class="row">
         <div class="col text-center">
           <h4 v-if="this.message !== ''">{{ this.message }}</h4>
+
           <h4 v-if="this.message === ''" class="ellipsis-anim">
             Computer is thinking<span>.</span><span>.</span><span>.</span>
           </h4>
@@ -155,30 +156,27 @@
         </div>
       </div>
 
-      <InfoModal v-if="showInfoModal" @closeWindow="showInfoModal = false" />
-      <RulesModal v-if="showRulesModal" @closeWindow="showRulesModal = false" />
+      <modalInfo v-if="showModalInfo" @closeWindow="showModalInfo = false" />
+      <modalRules v-if="showModalRules" @closeWindow="showModalRules = false" />
     </div>
   </div>
 </template>
 
 <style lang="scss">
-#app {
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-}
+#ProSlaps {}
 </style>
 
 <script>
-import InfoModal from "./components/Info.vue";
-import RulesModal from "./components/Rules.vue";
+import modalInfo from "./components/Info.vue";
+import modalRules from "./components/Rules.vue";
 import onAction from "./scripts/onAction";
 import onIdle from "./scripts/onIdle";
 
 export default {
   name: "App",
   components: {
-    InfoModal,
-    RulesModal
+    modalInfo,
+    modalRules
   },
 
   mixins: [onAction, onIdle],
@@ -192,8 +190,8 @@ export default {
       counterDraws: 0,
       counterLoses: 0,
       actionResults: false,
-      showRulesModal: false,
-      showInfoModal: false,
+      showModalRules: false,
+      showModalInfo: false,
       message: ""
     };
   },
@@ -210,14 +208,12 @@ export default {
     },
 
     rulesButton() {
-      this.showRulesModal = true;
+      this.showModalRules = true;
     },
 
     infoButton() {
-      this.showInfoModal = true;
+      this.showModalInfo = true;
     }
-  },
-
-  created: function() {}
+  }
 };
 </script>
