@@ -1,9 +1,13 @@
 .human-icon-container,
 .computer-icon-container {
-  padding: 30px 0 0;
+  padding: 20px 0 0;
   overflow: hidden;
+  @media screen and ( min-width: $screen-sm ) {
+    padding: 30px 0 0;
+  }
+
   @media screen and ( min-width: $screen-md ) {
-    padding: 50px 0 0;
+    padding: 55px 0 0;
   }
 }
 

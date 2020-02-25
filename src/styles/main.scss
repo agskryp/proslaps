@@ -1,5 +1,17 @@
 @import "variables";
 
+html {
+  font-size: 14px;
+  @media all and (min-width: $screen-sm) {
+    font-size: 16px;
+  }
+
+  @media all and (min-width: $screen-lg) {
+    font-size: 18px;
+  }
+}
+
+
 #ProSlaps {
   width: 100vw;
   height: 100vh;
@@ -7,6 +19,8 @@
   align-items: center;
   justify-content: center;
   overflow: hidden;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
 }
 
 .modal-container {

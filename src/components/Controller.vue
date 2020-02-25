@@ -70,6 +70,17 @@
 .btn-light {
   border: 1px solid #dae0e5;
 }
+
+.controller-btn {
+  padding: 0.5rem 1rem;
+  /* font-size: 1rem; */
+  line-height: 1;
+  border-radius: 0.3rem;
+  @media all and (min-width: $screen-sm) {
+    /* font-size: 1.25rem; */
+    line-height: 1.5;
+  }
+}
 </style>
 
 <script>
