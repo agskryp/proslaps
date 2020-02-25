@@ -1,6 +1,7 @@
 {
-  "name": "paper-rock-scissor",
-  "version": "0.1.0",
+  "name": "proslaps!",
+  "version": "1.0.0",
+  "people": "Andrew Skrypnyk <agksryp@gmail.com> (https://agskryp.com)", 
   "private": true,
   "scripts": {
     "serve": "vue-cli-service serve",
