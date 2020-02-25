@@ -1,6 +1,12 @@
-.human-icon {
-  font-size: 17vw;
+.human-icon,
+.computer-icon {
+  font-size: $md-icon;
+  @media all and ( min-width: $screen-lg ) {
+    font-size: $lg-icon;
+  }
+}
 
+.human-icon {
   &.fa-hand-scissors,
   &.fa-hand-lizard {
     transform: scaleX(-1);
@@ -14,8 +20,6 @@
 }
 
 .computer-icon {
-  font-size: 17vw;
-
   &.fa-hand-rock,
   &.fa-hand-paper,
   &.fa-hand-spock {

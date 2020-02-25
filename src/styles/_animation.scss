@@ -1,7 +1,11 @@
 .human-icon-container {
   animation: humanHandShuffle 1s ease infinite;
   transform-origin: 10% 90%;
-  padding: 50px 0 0;
+  padding: 30px 0 0;
+  overflow: hidden;
+  @media screen and ( min-width: $screen-md ) {
+    padding: 50px 0 0;
+  }
 }
 
 @keyframes humanHandShuffle {
