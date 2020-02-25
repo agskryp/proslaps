@@ -13,7 +13,7 @@
       <main>
         <div class="row">
           <div class="col-6 col-md-5 order-0">
-            <span class="player-title text-center d-block font-weight-bold">User</span>
+            <span class="h4 text-center d-block font-weight-bold">User</span>
 
             <div
               class="human-icon-container text-center"
@@ -34,7 +34,7 @@
           </div>
 
           <div class="col-6 col-md-5 order-1 order-md-2">
-            <span class="player-title text-center d-block font-weight-bold">Computer</span>
+            <span class="h4 text-center d-block font-weight-bold">Computer</span>
 
             <div
               class="computer-icon-container text-center"
@@ -128,20 +128,9 @@
 </template>
 
 <style lang="scss">
-.player-title {
-  // font-size: 1rem;
-  @media all and (min-width: $screen-md) {
-    // font-size: 1.5rem;
-  }
-}
-
 .result-text {
-  // font-size: 1rem;
   line-height: 1.2;
   margin: 0;
-  @media screen and (min-width: $screen-md) {
-    // font-size: 1.75rem;
-  }
 }
 
 .footer-container {
