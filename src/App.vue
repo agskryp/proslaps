@@ -85,7 +85,7 @@
       </main>
 
       <footer class="row">
-        <div class="col-md-10 mx-auto">
+        <div class="col-md-10 mx-auto footer-container">
           <div class="row">
             <div class="col">
               <button
@@ -104,7 +104,7 @@
             </div>
 
             <div class="col text-right">
-              <span class="d-block"
+              <span class="d-block attribution"
                 >Made by
                 <a
                   href="https://agskryp.com"
@@ -129,6 +129,19 @@
 #ProSlaps {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+}
+.footer-container {
+  padding: 0 0.5rem;
+
+  .btn-link {
+    border: none;
+  }
+
+  .attribution {
+    padding: 0.25rem 0.5rem;
+    font-size: 0.875rem;
+    line-height: 1.5;
+  }
 }
 </style>
 
