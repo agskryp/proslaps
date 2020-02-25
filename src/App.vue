@@ -12,7 +12,7 @@
 
       <main>
         <div class="row">
-          <div class="col-5">
+          <div class="col-6 col-md-5 order-0">
             <span class="text-center h4 d-block">User</span>
 
             <div
@@ -27,11 +27,13 @@
             </div>
           </div>
 
-          <div class="col-2 d-flex align-items-center text-center">
-            <p class="h3">{{ this.results }}</p>
+          <div
+            class="col-12 col-md-2 d-flex align-items-center justify-content-center text-center order-3 order-md-1 mt-2 mt-md-0"
+          >
+            <p class="result-text">{{ this.results }}</p>
           </div>
 
-          <div class="col-5">
+          <div class="col-6 col-md-5 order-1 order-md-2">
             <span class="text-center h4 d-block">Computer</span>
 
             <div
@@ -130,6 +132,16 @@
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
+
+.result-text {
+  font-size: 1rem;
+  line-height: 1.2;
+  margin: 0;
+  @media screen and ( min-width: $screen-md) {
+    font-size: 1.75rem;
+  }
+}
+
 .footer-container {
   padding: 0 0.5rem;
 

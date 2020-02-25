@@ -1,6 +1,10 @@
 .human-icon,
 .computer-icon {
-  font-size: $md-icon;
+  font-size: $sm-icon;
+  @media all and ( min-width: $screen-md ) {
+    font-size: $md-icon;
+  }
+
   @media all and ( min-width: $screen-lg ) {
     font-size: $lg-icon;
   }

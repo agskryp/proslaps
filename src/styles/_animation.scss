@@ -1,11 +1,15 @@
-.human-icon-container {
-  animation: humanHandShuffle 1s ease infinite;
-  transform-origin: 10% 90%;
+.human-icon-container,
+.computer-icon-container {
   padding: 30px 0 0;
   overflow: hidden;
   @media screen and ( min-width: $screen-md ) {
     padding: 50px 0 0;
   }
+}
+
+.human-icon-container {
+  animation: humanHandShuffle 1s ease infinite;
+  transform-origin: 10% 90%;
 }
 
 @keyframes humanHandShuffle {
@@ -18,7 +22,6 @@
 .computer-icon-container {
   animation: computerHandShuffle 1s ease infinite;
   transform-origin: 90% 90%;
-  padding: 50px 0 0;
 }
 
 @keyframes computerHandShuffle {
