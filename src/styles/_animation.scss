@@ -28,38 +28,44 @@
   animation: none !important;
 }
 
-
-
-
-
-
-.ellipsis-anim span {
+.thinking-message span {
   opacity: 0;
-  -webkit-animation: ellipsis-dot 1s infinite;
-  animation: ellipsis-dot 1s infinite;
+  animation-duration: 2s;
+  animation-iteration-count: infinite;
+
+  &:nth-child(1) {
+    animation-name: ellipsis-1;
+  }
+
+  &:nth-child(2) {
+    animation-name: ellipsis-2;
+  }
+
+  &:nth-child(3) {
+    animation-name: ellipsis-3;
+  }
 }
 
-.ellipsis-anim span:nth-child(1) {
-  -webkit-animation-delay: 0.0s;
-  animation-delay: 0.0s;
-}
-.ellipsis-anim span:nth-child(2) {
-  -webkit-animation-delay: 0.1s;
-  animation-delay: 0.1s;
-}
-.ellipsis-anim span:nth-child(3) {
-  -webkit-animation-delay: 0.2s;
-  animation-delay: 0.2s;
-}
-
-@-webkit-keyframes ellipsis-dot {
+@keyframes ellipsis-1 {
     0% { opacity: 0; }
-   50% { opacity: 1; }
+   24% { opacity: 0; }
+   25% { opacity: 1; }
+   99% { opacity: 1; }
   100% { opacity: 0; }
 }
 
-@keyframes ellipsis-dot {
+@keyframes ellipsis-2 {
     0% { opacity: 0; }
+   49% { opacity: 0; }
    50% { opacity: 1; }
+   99% { opacity: 1; }
+  100% { opacity: 0; }
+}
+
+@keyframes ellipsis-3 {
+    0% { opacity: 0; }
+   74% { opacity: 0; }
+   75% { opacity: 1; }
+   99% { opacity: 1; }
   100% { opacity: 0; }
 }

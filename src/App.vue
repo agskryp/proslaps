@@ -1,95 +1,101 @@
 <template>
   <div id="ProSlaps">
     <div class="container">
-      <div class="row">
+      <header class="row">
         <div class="col text-center">
           <h1>
             <span class="font-weight-bold">Pro</span>
             <span class="font-italic">Slaps!</span>
           </h1>
         </div>
-      </div>
+      </header>
 
-      <div class="row">
-        <div class="col-5">
-          <span class="text-center h4 d-block">User</span>
+      <main>
+        <div class="row">
+          <div class="col-5">
+            <span class="text-center h4 d-block">User</span>
 
-          <div
-            class="human-icon-container text-center"
-            :class="{ 'stop-animation': actionResults }"
-          >
-            <font-awesome-icon
-              size="5x"
-              :icon="this.humanChoice"
-              class="human-icon"
-            />
+            <div
+              class="human-icon-container text-center"
+              :class="{ 'stop-animation': actionResults }"
+            >
+              <font-awesome-icon
+                size="5x"
+                :icon="this.humanChoice"
+                class="human-icon"
+              />
+            </div>
+          </div>
+
+          <div class="col-2 d-flex align-items-center text-center">
+            <p class="h3">{{ this.results }}</p>
+          </div>
+
+          <div class="col-5">
+            <span class="text-center h4 d-block">Computer</span>
+
+            <div
+              class="computer-icon-container text-center"
+              :class="{ 'stop-animation': actionResults }"
+            >
+              <font-awesome-icon
+                class="computer-icon"
+                size="5x"
+                :icon="this.computerChoice"
+              />
+            </div>
           </div>
         </div>
 
-        <div class="col-2 d-flex align-items-center text-center">
-          <p class="h3">{{ this.results }}</p>
-        </div>
+        <div class="row">
+          <div class="col text-center">
+            <p class="h4" v-if="this.message !== ''">{{ this.message }}</p>
 
-        <div class="col-5">
-          <span class="text-center h4 d-block">Computer</span>
-
-          <div
-            class="computer-icon-container text-center"
-            :class="{ 'stop-animation': actionResults }"
-          >
-            <font-awesome-icon
-              class="computer-icon"
-              size="5x"
-              :icon="this.computerChoice"
-            />
+            <p v-if="this.message === ''" class="thinking-message h4">
+              Computer is thinking<span>.</span><span>.</span><span>.</span>
+            </p>
           </div>
         </div>
-      </div>
 
-      <div class="row">
-        <div class="col text-center">
-          <p class="h4" v-if="this.message !== ''">{{ this.message }}</p>
+        <controller
+          @paper="onAction('hand-paper')"
+          @rock="onAction('hand-rock')"
+          @scissors="onAction('hand-scissors')"
+          @lizard="onAction('hand-lizard')"
+          @spock="onAction('hand-spock')"
+        />
 
-          <p v-if="this.message === ''" class="ellipsis-anim h4">
-            Computer is thinking<span>.</span><span>.</span><span>.</span>
-          </p>
+        <div class="row">
+          <div class="col-md-10 mx-auto">
+            <div class="row mt-2 mb-2">
+              <div class="col">
+                <b>Wins: {{ this.counterWins }}</b>
+              </div>
+
+              <div class="col text-center">
+                <b>Draws: {{ this.counterDraws }}</b>
+              </div>
+
+              <div class="col text-right">
+                <b>Loses: {{ this.counterLoses }}</b>
+              </div>
+            </div>
+          </div>
         </div>
-      </div>
+      </main>
 
-      <controller
-        @paper="onAction('hand-paper')"
-        @rock="onAction('hand-rock')"
-        @scissors="onAction('hand-scissors')"
-        @lizard="onAction('hand-lizard')"
-        @spock="onAction('hand-spock')"
-      />
-
-      <div class="row">
+      <footer class="row">
         <div class="col-md-10 mx-auto">
-          <div class="row mt-2 mb-2">
-            <div class="col">
-              <b>Wins: {{ this.counterWins }}</b>
-            </div>
-
-            <div class="col text-center">
-              <b>Draws: {{ this.counterDraws }}</b>
-            </div>
-
-            <div class="col text-right">
-              <b>Loses: {{ this.counterLoses }}</b>
-            </div>
-          </div>
-
           <div class="row">
             <div class="col">
-              <button 
+              <button
                 class="btn-link btn-sm text-decoration-none"
                 @click="rulesButton()"
               >
                 Rules
               </button>
               |
-              <button 
+              <button
                 class="btn-link btn-sm text-decoration-none"
                 @click="infoButton()"
               >
@@ -98,7 +104,7 @@
             </div>
 
             <div class="col text-right">
-              <span class="d-block h6"
+              <span class="d-block"
                 >Made by
                 <a
                   href="https://agskryp.com"
@@ -111,7 +117,7 @@
             </div>
           </div>
         </div>
-      </div>
+      </footer>
 
       <modalInfo v-if="showModalInfo" @closeWindow="showModalInfo = false" />
       <modalRules v-if="showModalRules" @closeWindow="showModalRules = false" />
