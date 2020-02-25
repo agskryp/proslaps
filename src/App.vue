@@ -156,7 +156,7 @@ import onAction from "./scripts/onAction";
 import onIdle from "./scripts/onIdle";
 
 export default {
-  name: "App",
+  name: "ProSlaps",
   components: {
     modalInfo,
     modalRules,
