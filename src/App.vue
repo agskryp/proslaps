@@ -48,7 +48,7 @@
         </div>
 
         <div class="row">
-          <div class="col text-center">
+          <div class="col text-center mt-2">
             <p class="h4" v-if="this.message !== ''">{{ this.message }}</p>
 
             <p v-if="this.message === ''" class="thinking-message h4">
@@ -67,7 +67,7 @@
 
         <div class="row">
           <div class="col-md-10 mx-auto">
-            <div class="row mt-2 mb-2">
+            <div class="row mt-1 mb-1 mt-md-2 mb-md-2">
               <div class="col">
                 <b>Wins: {{ this.counterWins }}</b>
               </div>

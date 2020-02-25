@@ -31,7 +31,7 @@
           <h4>Credits</h4>
 
           <p>
-            ProSlaps! was designed and developed by
+            ProSlaps! v1.0 was designed and developed by
             <a href="https://agskryp.com" target="_blank">Andrew Skrypnyk</a>
             using:
           </p>

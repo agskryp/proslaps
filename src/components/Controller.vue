@@ -2,7 +2,7 @@
   <div class="row">
     <div class="col-md-10 mx-auto">
       <div class="row">
-        <div class="col-12 col-md mt-2 mb-2">
+        <div class="col-12 col-md mt-1 mb-1 mt-md-2 mb-md-2">
           <button
             type="button"
             class="btn btn-light btn-block btn-lg"
@@ -14,7 +14,7 @@
           </button>
         </div>
 
-        <div class="col-12 col-md mt-2 mb-2">
+        <div class="col-12 col-md mt-1 mb-1 mt-md-2 mb-md-2">
           <button
             type="button"
             class="btn btn-secondary btn-block btn-lg"
@@ -26,7 +26,7 @@
           </button>
         </div>
 
-        <div class="col-12 col-md mt-2 mb-2">
+        <div class="col-12 col-md mt-1 mb-1 mt-md-2 mb-md-2">
           <button
             type="button"
             class="btn btn-warning btn-block btn-lg"
@@ -38,7 +38,7 @@
           </button>
         </div>
 
-        <div class="col-12 col-md mt-2 mb-2">
+        <div class="col-12 col-md mt-1 mb-1 mt-md-2 mb-md-2">
           <button
             type="button"
             class="btn btn-success btn-block btn-lg"
@@ -50,7 +50,7 @@
           </button>
         </div>
 
-        <div class="col-12 col-md mt-2 mb-2">
+        <div class="col-12 col-md mt-1 mb-1 mt-md-2 mb-md-2">
           <button
             type="button"
             class="btn btn-info btn-block btn-lg"
