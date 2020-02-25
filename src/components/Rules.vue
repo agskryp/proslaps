@@ -3,7 +3,7 @@
     <div class="modal-dialog">
       <div class="modal-content">
         <div class="modal-header">
-          <h5 class="modal-title">Rules</h5>
+          <h3 class="modal-title">Rules</h3>
 
           <button
             type="button"
