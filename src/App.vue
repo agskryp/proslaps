@@ -52,91 +52,93 @@
         </div>
       </div>
 
-<div class="row">
-  <div class="col-md-10 mx-auto">
       <div class="row">
-        <div class="col-12 col-md mt-2 mb-2">
-          <button
-            type="button"
-            class="btn btn-light btn-block"
-            data-toggle="button"
-            aria-pressed="false"
-            @click="onAction('hand-paper')"
-          >
-            Paper
-          </button>
-        </div>
+        <div class="col-md-10 mx-auto">
+          <div class="row">
+            <div class="col-12 col-md mt-2 mb-2">
+              <button
+                type="button"
+                class="btn btn-light btn-block"
+                data-toggle="button"
+                aria-pressed="false"
+                @click="onAction('hand-paper')"
+              >
+                Paper
+              </button>
+            </div>
 
-        <div class="col-12 col-md mt-2 mb-2">
-          <button
-            type="button"
-            class="btn btn-secondary btn-block"
-            data-toggle="button"
-            aria-pressed="false"
-            @click="onAction('hand-rock')"
-          >
-            Rock
-          </button>
-        </div>
+            <div class="col-12 col-md mt-2 mb-2">
+              <button
+                type="button"
+                class="btn btn-secondary btn-block"
+                data-toggle="button"
+                aria-pressed="false"
+                @click="onAction('hand-rock')"
+              >
+                Rock
+              </button>
+            </div>
 
-        <div class="col-12 col-md mt-2 mb-2">
-          <button
-            type="button"
-            class="btn btn-warning btn-block"
-            data-toggle="button"
-            aria-pressed="false"
-            @click="onAction('hand-scissors')"
-          >
-            Scissors
-          </button>
-        </div>
+            <div class="col-12 col-md mt-2 mb-2">
+              <button
+                type="button"
+                class="btn btn-warning btn-block"
+                data-toggle="button"
+                aria-pressed="false"
+                @click="onAction('hand-scissors')"
+              >
+                Scissors
+              </button>
+            </div>
 
-        <div class="col-12 col-md mt-2 mb-2">
-          <button
-            type="button"
-            class="btn btn-success btn-block"
-            data-toggle="button"
-            aria-pressed="false"
-            @click="onAction('hand-lizard')"
-          >
-            Lizard
-          </button>
-        </div>
+            <div class="col-12 col-md mt-2 mb-2">
+              <button
+                type="button"
+                class="btn btn-success btn-block"
+                data-toggle="button"
+                aria-pressed="false"
+                @click="onAction('hand-lizard')"
+              >
+                Lizard
+              </button>
+            </div>
 
-        <div class="col-12 col-md mt-2 mb-2">
-          <button
-            type="button"
-            class="btn btn-info btn-block"
-            data-toggle="button"
-            aria-pressed="false"
-            @click="onAction('hand-spock')"
-          >
-            Spock
-          </button>
+            <div class="col-12 col-md mt-2 mb-2">
+              <button
+                type="button"
+                class="btn btn-info btn-block"
+                data-toggle="button"
+                aria-pressed="false"
+                @click="onAction('hand-spock')"
+              >
+                Spock
+              </button>
+            </div>
+          </div>
         </div>
       </div>
-  </div>
-</div>
 
       <div class="row">
-        <div class="col-md-8 mx-auto">
+        <div class="col-md-10 mx-auto">
           <div class="row mt-2 mb-2">
-              <div class="col">
-                <b>Wins: {{ this.counterWins }}</b>
-              </div>
-
-              <div class="col text-center">
-                <b>Draws: {{ this.counterDraws }}</b>
-              </div>
-
-              <div class="col text-right">
-                <b>Loses: {{ this.counterLoses }}</b>
-              </div>
+            <div class="col">
+              <b>Wins: {{ this.counterWins }}</b>
             </div>
+
+            <div class="col text-center">
+              <b>Draws: {{ this.counterDraws }}</b>
+            </div>
+
+            <div class="col text-right">
+              <b>Loses: {{ this.counterLoses }}</b>
+            </div>
+          </div>
 
           <div class="row">
             <div class="col">
-              <button class="btn-link btn-sm" @click="rulesButton()">Rules</button>
+              <button class="btn-link btn-sm" @click="rulesButton()">
+                Rules
+              </button>
               |
               <button class="btn-link btn-sm" @click="infoButton()">
                 Information
@@ -144,7 +146,8 @@
             </div>
 
             <div class="col text-right">
-              <small>Made by 
+              <small
+                >Made by
                 <a href="https://agskryp.com" target="_blank">A.G. Skryp</a>
               </small>
             </div>

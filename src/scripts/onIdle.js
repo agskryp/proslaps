@@ -2,8 +2,8 @@ export default {
   data() {
     return {
       computerIconRNG: 1,
-      humanIconRNG: 1,
-    }
+      humanIconRNG: 1
+    };
   },
 
   methods: {
