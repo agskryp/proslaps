@@ -209,35 +209,35 @@ export default {
   mounted() {
     this.idleScreen();
 
-    if( localStorage.counterWins ) {
+    if (localStorage.counterWins) {
       this.counterWins = localStorage.counterWins;
     }
 
-    if( localStorage.counterDraws ) {
+    if (localStorage.counterDraws) {
       this.counterDraws = localStorage.counterDraws;
     }
 
-    if( localStorage.counterLoses ) {
+    if (localStorage.counterLoses) {
       this.counterLoses = localStorage.counterLoses;
     }
 
-    if( localStorage.handPaper ) {
+    if (localStorage.handPaper) {
       this.handPaper = localStorage.handPaper;
     }
 
-    if( localStorage.handRock ) {
+    if (localStorage.handRock) {
       this.handRock = localStorage.handRock;
     }
 
-    if( localStorage.handScissors ) {
+    if (localStorage.handScissors) {
       this.handScissors = localStorage.handScissors;
     }
-    
-    if( localStorage.handLizard ) {
+
+    if (localStorage.handLizard) {
       this.handLizard = localStorage.handLizard;
     }
 
-    if( localStorage.handSpock ) {
+    if (localStorage.handSpock) {
       this.handSpock = localStorage.handSpock;
     }
   },

@@ -81,7 +81,7 @@ export default {
       localStorage.handPaper = this.$parent.handPaper++;
       this.$emit("paper");
     },
-    
+
     buttonRock: function() {
       localStorage.handRock = this.$parent.handRock++;
       this.$emit("rock");
@@ -91,12 +91,12 @@ export default {
       localStorage.handScissors = this.$parent.handScissors++;
       this.$emit("scissors");
     },
-    
+
     buttonLizard: function() {
       localStorage.handLizard = this.$parent.handLizard++;
       this.$emit("lizard");
     },
-    
+
     buttonSpock: function() {
       localStorage.handSpock = this.$parent.handSpock++;
       this.$emit("spock");
