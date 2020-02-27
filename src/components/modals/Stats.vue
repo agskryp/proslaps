@@ -1,7 +1,7 @@
 <template>
   <div class="modal-container">
     <div class="modal-dialog">
-      <div class="modal-content">
+      <div class="modal-content modal-lg">
         <div class="modal-header">
           <h3 class="modal-title">Stats</h3>
 
@@ -16,23 +16,45 @@
         </div>
 
         <div class="modal-body">
-          <div class="row">
-            <div class="col">
-              <b>Wins: {{ this.counterWins }}</b>
+          <div class="container">
+            <div class="row">
+              <b>Wins: {{ this.$parent.counterWins }}</b>
             </div>
 
-            <div class="col text-center">
-              <b>Draws: {{ this.counterDraws }}</b>
+            <div class="row">
+              <b>Draws: {{ this.$parent.counterDraws }}</b>
             </div>
 
-            <div class="col text-right">
-              <b>Loses: {{ this.counterLoses }}</b>
+            <div class="row">
+              <b>Loses: {{ this.$parent.counterLoses }}</b>
             </div>
           </div>
         </div>
 
         <div class="modal-footer">
+          <button type="button" class="btn btn-danger" @click="reset()">
+            Reset
+          </button>
+
           <button type="button" class="btn btn-secondary" @click="close()">
+            Close
+          </button>
+        </div>
+      </div>
+    </div>
+
+    <div class="modal-dialog" v-if="showModalReset == true">
+      <div class="modal-content modal-lg">
+        <div class="modal-header">
+          <h3 class="modal-title">Are you sure?</h3>
+        </div>
+
+        <div class="modal-footer">
+          <button type="button" class="btn btn-danger" @click="deleteStats()">
+            Confirm
+          </button>
+
+          <button type="button" class="btn btn-secondary" @click="closeReset()">
             Close
           </button>
         </div>
@@ -47,9 +69,19 @@
 export default {
   name: "Rules",
 
+  data() {
+    return {
+      showModalReset: false
+    }
+  },
+
   methods: {
     close: function() {
       this.$emit("closeWindow");
+    },
+
+    reset: function() {
+      this.showModalReset = true;
     }
   }
 };
