@@ -9,7 +9,7 @@ export default {
       counterScissors: 0,
       counterLizard: 0,
       counterSpock: 0
-    }
+    };
   },
 
   methods: {
@@ -47,4 +47,4 @@ export default {
       }
     }
   }
-}
+};
