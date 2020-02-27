@@ -105,6 +105,13 @@
               >
                 Information
               </button>
+              |
+              <button
+                class="btn-link btn-sm text-decoration-none"
+                @click="statsButton()"
+              >
+                Stats
+              </button>
             </div>
 
             <div class="col text-right">
@@ -125,6 +132,7 @@
 
       <modalInfo v-if="showModalInfo" @closeWindow="showModalInfo = false" />
       <modalRules v-if="showModalRules" @closeWindow="showModalRules = false" />
+      <modalStats v-if="showModalStats" @closeWindow="showModalStats = false" />
     </div>
   </div>
 </template>
@@ -155,7 +163,10 @@
 <script>
 import modalInfo from "./components/Info.vue";
 import modalRules from "./components/Rules.vue";
+import modalStats from "./components/modals/Stats.vue";
+
 import controller from "./components/Controller.vue";
+
 import onAction from "./scripts/onAction";
 import onIdle from "./scripts/onIdle";
 
@@ -164,6 +175,7 @@ export default {
   components: {
     modalInfo,
     modalRules,
+    modalStats,
     controller
   },
 
@@ -180,6 +192,7 @@ export default {
       actionResults: false,
       showModalRules: false,
       showModalInfo: false,
+      showModalStats: false,
       message: ""
     };
   },
@@ -217,6 +230,10 @@ export default {
 
     rulesButton() {
       this.showModalRules = true;
+    },
+
+    statsButton() {
+      this.showModalStats = true;
     },
 
     infoButton() {
