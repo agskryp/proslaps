@@ -41,6 +41,11 @@
                       <th scope="row">Loses</th>
                       <td>{{ this.$parent.counterLoses }}</td>
                     </tr>
+
+                    <tr>
+                      <th scope="row">Total</th>
+                      <td>{{ this.counterTotal }}</td>
+                    </tr>
                   </tbody>
                 </table>
               </div>
@@ -135,8 +140,16 @@ export default {
 
   data() {
     return {
-      showModalReset: false
+      showModalReset: false,
+      counterTotal: 0
     };
+  },
+
+  mounted() {
+    this.counterTotal =
+      parseInt(this.$parent.counterWins) +
+      parseInt(this.$parent.counterDraws) +
+      parseInt(this.$parent.counterLoses);
   },
 
   methods: {
@@ -153,7 +166,7 @@ export default {
     },
 
     deleteStats: function() {
-      this.$parent.counterWins = this.$parent.counterDraws = this.$parent.counterLoses = this.$parent.counterPaper = this.$parent.counterRock = this.$parent.counterScissors = this.$parent.counterLizard = this.$parent.counterSpock = 0;
+      localStorage.counterWins = localStorage.counterDraws = localStorage.counterLoses = localStorage.counterPaper = localStorage.counterRock = localStorage.counterScissors = localStorage.counterLizard = localStorage.counterSpock = this.$parent.counterWins = this.$parent.counterDraws = this.$parent.counterLoses = this.$parent.counterPaper = this.$parent.counterRock = this.$parent.counterScissors = this.$parent.counterLizard = this.$parent.counterSpock = 0;
       this.showModalReset = false;
       this.$emit("closeWindow");
     }
