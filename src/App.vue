@@ -150,6 +150,10 @@
     border: none;
     outline: none;
     background: transparent;
+
+    &:focus {
+      color: #0056b3;
+    }
   }
 
   .attribution {
@@ -190,6 +194,10 @@ export default {
       counterDraws: 0,
       counterLoses: 0,
       handPaper: 0,
+      handRock: 0,
+      handScissors: 0,
+      handLizard: 0,
+      handSpock: 0,
       actionResults: false,
       showModalRules: false,
       showModalInfo: false,
@@ -201,29 +209,40 @@ export default {
   mounted() {
     this.idleScreen();
 
-    this.counterWins = localStorage.counterWins;
-    this.counterDraws = localStorage.counterDraws;
-    this.counterLoses = localStorage.counterLoses;
-    // this.handPaper = localStorage.handPaper;
-  },
-
-  watch: {
-    counterWins(value) {
-      localStorage.counterWins = value;
-    },
-
-    counterDraws(value) {
-      localStorage.counterDraws = value;
-    },
-
-    counterLoses(value) {
-      localStorage.counterLoses = value;
+    if( localStorage.counterWins ) {
+      this.counterWins = localStorage.counterWins;
     }
 
-    // handPaper(value) {
-    //   localStorage.handPaper = value;
-    // }
+    if( localStorage.counterDraws ) {
+      this.counterDraws = localStorage.counterDraws;
+    }
+
+    if( localStorage.counterLoses ) {
+      this.counterLoses = localStorage.counterLoses;
+    }
+
+    if( localStorage.handPaper ) {
+      this.handPaper = localStorage.handPaper;
+    }
+
+    if( localStorage.handRock ) {
+      this.handRock = localStorage.handRock;
+    }
+
+    if( localStorage.handScissors ) {
+      this.handScissors = localStorage.handScissors;
+    }
+    
+    if( localStorage.handLizard ) {
+      this.handLizard = localStorage.handLizard;
+    }
+
+    if( localStorage.handSpock ) {
+      this.handSpock = localStorage.handSpock;
+    }
   },
+
+  watch: {},
 
   methods: {
     idleScreen() {

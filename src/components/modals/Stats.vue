@@ -61,22 +61,22 @@
 
                     <tr>
                       <th scope="row">Rock</th>
-                      <td></td>
+                      <td>{{ this.$parent.handRock }}</td>
                     </tr>
 
                     <tr>
                       <th scope="row">Scissors</th>
-                      <td></td>
+                      <td>{{ this.$parent.handScissors }}</td>
                     </tr>
 
                     <tr>
                       <th scope="row">Lizard</th>
-                      <td></td>
+                      <td>{{ this.$parent.handLizard }}</td>
                     </tr>
 
                     <tr>
                       <th scope="row">Spock</th>
-                      <td></td>
+                      <td>{{ this.$parent.handSpock }}</td>
                     </tr>
                   </tbody>
                 </table>
@@ -139,11 +139,6 @@ export default {
     };
   },
 
-  created() {
-    console.log(this.$parent.handPaper);
-    // console.log( this.paperHand );
-  },
-
   methods: {
     close: function() {
       this.$emit("closeWindow");
@@ -158,7 +153,7 @@ export default {
     },
 
     deleteStats: function() {
-      this.$parent.counterWins = this.$parent.counterDraws = this.$parent.counterLoses = 0;
+      this.$parent.counterWins = this.$parent.counterDraws = this.$parent.counterLoses = this.$parent.handPaper = this.$parent.handRock = this.$parent.handScissors = this.$parent.handLizard = this.$parent.handSpock = 0;
       this.showModalReset = false;
       this.$emit("closeWindow");
     }

@@ -20,7 +20,7 @@
             class="btn btn-secondary btn-block btn-lg"
             data-toggle="button"
             aria-pressed="false"
-            @click="$emit('rock')"
+            @click="buttonRock()"
           >
             Rock
           </button>
@@ -32,7 +32,7 @@
             class="btn btn-warning btn-block btn-lg"
             data-toggle="button"
             aria-pressed="false"
-            @click="$emit('scissors')"
+            @click="buttonScissors()"
           >
             Scissors
           </button>
@@ -44,7 +44,7 @@
             class="btn btn-success btn-block btn-lg"
             data-toggle="button"
             aria-pressed="false"
-            @click="$emit('lizard')"
+            @click="buttonLizard()"
           >
             Lizard
           </button>
@@ -56,7 +56,7 @@
             class="btn btn-info btn-block btn-lg"
             data-toggle="button"
             aria-pressed="false"
-            @click="$emit('spock')"
+            @click="buttonSpock()"
           >
             Spock
           </button>
@@ -76,20 +76,30 @@
 export default {
   name: "controller",
 
-  // data() {
-  //   return {
-  //     handPaper: 0,
-  //   }
-  // },
-
   methods: {
     buttonPaper: function() {
-      // this.handPaper++;
-      this.$parent.handPaper++;
-
-      // console.log( this.handPaper );
-      console.log(this.$parent.handPaper);
+      localStorage.handPaper = this.$parent.handPaper++;
       this.$emit("paper");
+    },
+    
+    buttonRock: function() {
+      localStorage.handRock = this.$parent.handRock++;
+      this.$emit("rock");
+    },
+
+    buttonScissors: function() {
+      localStorage.handScissors = this.$parent.handScissors++;
+      this.$emit("scissors");
+    },
+    
+    buttonLizard: function() {
+      localStorage.handLizard = this.$parent.handLizard++;
+      this.$emit("lizard");
+    },
+    
+    buttonSpock: function() {
+      localStorage.handSpock = this.$parent.handSpock++;
+      this.$emit("spock");
     }
   }
 };
