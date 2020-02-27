@@ -193,11 +193,11 @@ export default {
       counterWins: 0,
       counterDraws: 0,
       counterLoses: 0,
-      handPaper: 0,
-      handRock: 0,
-      handScissors: 0,
-      handLizard: 0,
-      handSpock: 0,
+      counterPaper: 0,
+      counterRock: 0,
+      counterScissors: 0,
+      counterLizard: 0,
+      counterSpock: 0,
       actionResults: false,
       showModalRules: false,
       showModalInfo: false,
@@ -221,24 +221,24 @@ export default {
       this.counterLoses = localStorage.counterLoses;
     }
 
-    if (localStorage.handPaper) {
-      this.handPaper = localStorage.handPaper;
+    if (localStorage.counterPaper) {
+      this.counterPaper = localStorage.counterPaper;
     }
 
-    if (localStorage.handRock) {
-      this.handRock = localStorage.handRock;
+    if (localStorage.counterRock) {
+      this.counterRock = localStorage.counterRock;
     }
 
-    if (localStorage.handScissors) {
-      this.handScissors = localStorage.handScissors;
+    if (localStorage.counterScissors) {
+      this.counterScissors = localStorage.counterScissors;
     }
 
-    if (localStorage.handLizard) {
-      this.handLizard = localStorage.handLizard;
+    if (localStorage.counterLizard) {
+      this.counterLizard = localStorage.counterLizard;
     }
 
-    if (localStorage.handSpock) {
-      this.handSpock = localStorage.handSpock;
+    if (localStorage.counterSpock) {
+      this.counterSpock = localStorage.counterSpock;
     }
   },
 

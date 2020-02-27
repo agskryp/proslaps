@@ -78,27 +78,27 @@ export default {
 
   methods: {
     buttonPaper: function() {
-      localStorage.handPaper = this.$parent.handPaper++;
+      localStorage.counterPaper = this.$parent.counterPaper++;
       this.$emit("paper");
     },
 
     buttonRock: function() {
-      localStorage.handRock = this.$parent.handRock++;
+      localStorage.counterRock = this.$parent.counterRock++;
       this.$emit("rock");
     },
 
     buttonScissors: function() {
-      localStorage.handScissors = this.$parent.handScissors++;
+      localStorage.counterScissors = this.$parent.counterScissors++;
       this.$emit("scissors");
     },
 
     buttonLizard: function() {
-      localStorage.handLizard = this.$parent.handLizard++;
+      localStorage.counterLizard = this.$parent.counterLizard++;
       this.$emit("lizard");
     },
 
     buttonSpock: function() {
-      localStorage.handSpock = this.$parent.handSpock++;
+      localStorage.counterSpock = this.$parent.counterSpock++;
       this.$emit("spock");
     }
   }

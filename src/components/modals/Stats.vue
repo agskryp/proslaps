@@ -56,27 +56,27 @@
                   <tbody>
                     <tr>
                       <th scope="row">Paper</th>
-                      <td>{{ this.$parent.handPaper }}</td>
+                      <td>{{ this.$parent.counterPaper }}</td>
                     </tr>
 
                     <tr>
                       <th scope="row">Rock</th>
-                      <td>{{ this.$parent.handRock }}</td>
+                      <td>{{ this.$parent.counterRock }}</td>
                     </tr>
 
                     <tr>
                       <th scope="row">Scissors</th>
-                      <td>{{ this.$parent.handScissors }}</td>
+                      <td>{{ this.$parent.counterScissors }}</td>
                     </tr>
 
                     <tr>
                       <th scope="row">Lizard</th>
-                      <td>{{ this.$parent.handLizard }}</td>
+                      <td>{{ this.$parent.counterLizard }}</td>
                     </tr>
 
                     <tr>
                       <th scope="row">Spock</th>
-                      <td>{{ this.$parent.handSpock }}</td>
+                      <td>{{ this.$parent.counterSpock }}</td>
                     </tr>
                   </tbody>
                 </table>
@@ -153,7 +153,7 @@ export default {
     },
 
     deleteStats: function() {
-      this.$parent.counterWins = this.$parent.counterDraws = this.$parent.counterLoses = this.$parent.handPaper = this.$parent.handRock = this.$parent.handScissors = this.$parent.handLizard = this.$parent.handSpock = 0;
+      this.$parent.counterWins = this.$parent.counterDraws = this.$parent.counterLoses = this.$parent.counterPaper = this.$parent.counterRock = this.$parent.counterScissors = this.$parent.counterLizard = this.$parent.counterSpock = 0;
       this.showModalReset = false;
       this.$emit("closeWindow");
     }
