@@ -189,6 +189,7 @@ export default {
       counterWins: 0,
       counterDraws: 0,
       counterLoses: 0,
+      handPaper2: 0,
       actionResults: false,
       showModalRules: false,
       showModalInfo: false,
@@ -200,11 +201,10 @@ export default {
   mounted() {
     this.idleScreen();
 
-    // if (localStorage.counterWins) {
     this.counterWins = localStorage.counterWins;
     this.counterDraws = localStorage.counterDraws;
     this.counterLoses = localStorage.counterLoses;
-    // }
+    // this.handPaper = localStorage.handPaper;
   },
 
   watch: {
@@ -218,7 +218,11 @@ export default {
 
     counterLoses(value) {
       localStorage.counterLoses = value;
-    }
+    },
+
+    // handPaper(value) {
+    //   localStorage.handPaper = value;
+    // }
   },
 
   methods: {

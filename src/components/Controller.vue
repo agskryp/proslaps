@@ -8,7 +8,7 @@
             class="btn btn-light btn-block btn-lg"
             data-toggle="button"
             aria-pressed="false"
-            @click="$emit('paper')"
+            @click="buttonPaper()"
           >
             Paper
           </button>
@@ -74,6 +74,23 @@
 
 <script>
 export default {
-  name: "controller"
+  name: "controller",
+
+  // data() {
+  //   return {
+  //     handPaper: 0,
+  //   }
+  // },
+
+  methods: {
+    buttonPaper: function() {
+      // this.handPaper++;
+      this.$parent.handPaper2++;
+
+      // console.log( this.handPaper );
+      console.log( this.$parent.handPaper2 );
+      this.$emit('paper');
+    }
+  }
 };
 </script>

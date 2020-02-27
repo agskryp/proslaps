@@ -52,7 +52,7 @@
               <tbody>
                 <tr>
                   <th scope="row">Paper</th>
-                  <td></td>
+                  <td>{{ this.$parent.handPaper2 }}</td>
                 </tr>
 
                 <tr>
@@ -131,6 +131,11 @@ export default {
     return {
       showModalReset: false
     };
+  },
+
+  created() {
+    console.log( this.$parent.handPaper2 );
+    // console.log( this.paperHand );
   },
 
   methods: {
