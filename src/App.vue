@@ -30,11 +30,13 @@
           <div
             class="col-12 col-md-2 d-flex align-items-center justify-content-center text-center order-3 order-md-1 mt-2 mt-md-0"
           >
-            <p class="result-text">{{ this.results }}</p>
+            <p class="result-text h5 font-weight-bold">{{ this.results }}</p>
           </div>
 
           <div class="col-6 col-md-5 order-1 order-md-2">
-            <span class="h4 text-center d-block font-weight-bold">Computer</span>
+            <span class="h4 text-center d-block font-weight-bold"
+              >Computer</span
+            >
 
             <div
               class="computer-icon-container text-center"
@@ -169,7 +171,7 @@ export default {
     return {
       computerChoice: "hand-scissors",
       humanChoice: "hand-rock",
-      results: "",
+      results: "\xa0",
       counterWins: 0,
       counterDraws: 0,
       counterLoses: 0,

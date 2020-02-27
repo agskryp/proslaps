@@ -9,7 +9,7 @@ export default {
         (hand == "hand-spock" && this.computerChoice == "hand-spock")
       ) {
         this.counterDraws++;
-        this.results = "It's a draw!";
+        this.results = "Players draw";
 
         if (hand == "hand-rock" && this.computerChoice == "hand-rock") {
           this.message = "Between a rock and a hard place";
