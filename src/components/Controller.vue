@@ -85,11 +85,11 @@ export default {
   methods: {
     buttonPaper: function() {
       // this.handPaper++;
-      this.$parent.handPaper2++;
+      this.$parent.handPaper++;
 
       // console.log( this.handPaper );
-      console.log( this.$parent.handPaper2 );
-      this.$emit('paper');
+      console.log(this.$parent.handPaper);
+      this.$emit("paper");
     }
   }
 };

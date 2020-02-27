@@ -189,7 +189,7 @@ export default {
       counterWins: 0,
       counterDraws: 0,
       counterLoses: 0,
-      handPaper2: 0,
+      handPaper: 0,
       actionResults: false,
       showModalRules: false,
       showModalInfo: false,
@@ -218,7 +218,7 @@ export default {
 
     counterLoses(value) {
       localStorage.counterLoses = value;
-    },
+    }
 
     // handPaper(value) {
     //   localStorage.handPaper = value;

@@ -1,7 +1,7 @@
 <template>
   <div>
     <div class="modal-container">
-      <div class="modal-dialog">
+      <div class="modal-dialog" style="width: 100%;">
         <div class="modal-content modal-lg">
           <div class="modal-header">
             <h3 class="modal-title">Stats</h3>
@@ -17,65 +17,71 @@
           </div>
 
           <div class="modal-body">
-            <table class="table table-sm table-bordered">
-              <thead class="table-active">
-                <tr>
-                  <th scope="col" colspan="2">Standings</th>
-                </tr>
-              </thead>
+            <div class="row">
+              <div class="col">
+                <table class="table table-sm table-bordered">
+                  <thead class="table-active">
+                    <tr>
+                      <th scope="col" colspan="2">Standings</th>
+                    </tr>
+                  </thead>
 
-              <tbody>
-                <tr>
-                  <th scope="row">Wins</th>
-                  <td>{{ this.$parent.counterWins }}</td>
-                </tr>
+                  <tbody>
+                    <tr>
+                      <th scope="row">Wins</th>
+                      <td>{{ this.$parent.counterWins }}</td>
+                    </tr>
 
-                <tr>
-                  <th scope="row">Draws</th>
-                  <td>{{ this.$parent.counterDraws }}</td>
-                </tr>
+                    <tr>
+                      <th scope="row">Draws</th>
+                      <td>{{ this.$parent.counterDraws }}</td>
+                    </tr>
 
-                <tr>
-                  <th scope="row">Loses</th>
-                  <td>{{ this.$parent.counterLoses }}</td>
-                </tr>
-              </tbody>
-            </table>
+                    <tr>
+                      <th scope="row">Loses</th>
+                      <td>{{ this.$parent.counterLoses }}</td>
+                    </tr>
+                  </tbody>
+                </table>
+              </div>
 
-            <table class="table table-sm table-bordered">
-              <thead class="table-active">
-                <tr>
-                  <th scope="col" colspan="2">Hands</th>
-                </tr>
-              </thead>
+              <div class="col">
+                <table class="table table-sm table-bordered">
+                  <thead class="table-active">
+                    <tr>
+                      <th scope="col" colspan="2">Hands Played</th>
+                    </tr>
+                  </thead>
 
-              <tbody>
-                <tr>
-                  <th scope="row">Paper</th>
-                  <td>{{ this.$parent.handPaper2 }}</td>
-                </tr>
+                  <tbody>
+                    <tr>
+                      <th scope="row">Paper</th>
+                      <td>{{ this.$parent.handPaper }}</td>
+                    </tr>
 
-                <tr>
-                  <th scope="row">Rock</th>
-                  <td></td>
-                </tr>
+                    <tr>
+                      <th scope="row">Rock</th>
+                      <td></td>
+                    </tr>
 
-                <tr>
-                  <th scope="row">Scissors</th>
-                  <td></td>
-                </tr>
+                    <tr>
+                      <th scope="row">Scissors</th>
+                      <td></td>
+                    </tr>
 
-                <tr>
-                  <th scope="row">Lizard</th>
-                  <td></td>
-                </tr>
+                    <tr>
+                      <th scope="row">Lizard</th>
+                      <td></td>
+                    </tr>
 
-                <tr>
-                  <th scope="row">Spock</th>
-                  <td></td>
-                </tr>
-              </tbody>
-            </table>
+                    <tr>
+                      <th scope="row">Spock</th>
+                      <td></td>
+                    </tr>
+                  </tbody>
+                </table>
+              </div>
+            </div>
           </div>
 
           <div class="modal-footer">
@@ -134,7 +140,7 @@ export default {
   },
 
   created() {
-    console.log( this.$parent.handPaper2 );
+    console.log(this.$parent.handPaper);
     // console.log( this.paperHand );
   },
 
