@@ -201,9 +201,9 @@ export default {
     this.idleScreen();
 
     // if (localStorage.counterWins) {
-      this.counterWins = localStorage.counterWins;
-      this.counterDraws = localStorage.counterDraws;
-      this.counterLoses = localStorage.counterLoses;
+    this.counterWins = localStorage.counterWins;
+    this.counterDraws = localStorage.counterDraws;
+    this.counterLoses = localStorage.counterLoses;
     // }
   },
 
@@ -218,7 +218,7 @@ export default {
 
     counterLoses(value) {
       localStorage.counterLoses = value;
-    },
+    }
   },
 
   methods: {

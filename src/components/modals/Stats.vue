@@ -17,19 +17,65 @@
           </div>
 
           <div class="modal-body">
-            <div class="container">
-              <div class="row">
-                <b>Wins: {{ this.$parent.counterWins }}</b>
-              </div>
+            <table class="table table-sm table-bordered">
+              <thead class="table-active">
+                <tr>
+                  <th scope="col" colspan="2">Standings</th>
+                </tr>
+              </thead>
 
-              <div class="row">
-                <b>Draws: {{ this.$parent.counterDraws }}</b>
-              </div>
+              <tbody>
+                <tr>
+                  <th scope="row">Wins</th>
+                  <td>{{ this.$parent.counterWins }}</td>
+                </tr>
 
-              <div class="row">
-                <b>Loses: {{ this.$parent.counterLoses }}</b>
-              </div>
-            </div>
+                <tr>
+                  <th scope="row">Draws</th>
+                  <td>{{ this.$parent.counterDraws }}</td>
+                </tr>
+
+                <tr>
+                  <th scope="row">Loses</th>
+                  <td>{{ this.$parent.counterLoses }}</td>
+                </tr>
+              </tbody>
+            </table>
+
+            <table class="table table-sm table-bordered">
+              <thead class="table-active">
+                <tr>
+                  <th scope="col" colspan="2">Hands</th>
+                </tr>
+              </thead>
+
+              <tbody>
+                <tr>
+                  <th scope="row">Paper</th>
+                  <td></td>
+                </tr>
+
+                <tr>
+                  <th scope="row">Rock</th>
+                  <td></td>
+                </tr>
+
+                <tr>
+                  <th scope="row">Scissors</th>
+                  <td></td>
+                </tr>
+
+                <tr>
+                  <th scope="row">Lizard</th>
+                  <td></td>
+                </tr>
+
+                <tr>
+                  <th scope="row">Spock</th>
+                  <td></td>
+                </tr>
+              </tbody>
+            </table>
           </div>
 
           <div class="modal-footer">
@@ -45,11 +91,15 @@
       </div>
     </div>
 
-  <div class="modal-container" v-if="showModalReset == true">
+    <div class="modal-container" v-if="showModalReset == true">
       <div class="modal-dialog">
         <div class="modal-content modal-lg">
           <div class="modal-header">
             <h3 class="modal-title">Are you sure?</h3>
+          </div>
+
+          <div class="modal-body">
+            <p>Pressing confirm will erase all of your stats.</p>
           </div>
 
           <div class="modal-footer">
@@ -62,7 +112,7 @@
               class="btn btn-secondary"
               @click="closeReset()"
             >
-              Close
+              Nevermind
             </button>
           </div>
         </div>
@@ -80,7 +130,7 @@ export default {
   data() {
     return {
       showModalReset: false
-    }
+    };
   },
 
   methods: {
