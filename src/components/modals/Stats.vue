@@ -114,7 +114,7 @@
           </div>
 
           <div class="modal-footer">
-            <button type="button" class="btn btn-danger" @click="deleteStats()">
+            <button type="button" class="btn btn-danger" @click="resetStats()">
               Confirm
             </button>
 
@@ -165,7 +165,7 @@ export default {
       this.showModalReset = false;
     },
 
-    deleteStats: function() {
+    resetStats: function() {
       localStorage.counterWins = localStorage.counterDraws = localStorage.counterLoses = localStorage.counterPaper = localStorage.counterRock = localStorage.counterScissors = localStorage.counterLizard = localStorage.counterSpock = this.$parent.counterWins = this.$parent.counterDraws = this.$parent.counterLoses = this.$parent.counterPaper = this.$parent.counterRock = this.$parent.counterScissors = this.$parent.counterLizard = this.$parent.counterSpock = 0;
       this.showModalReset = false;
       this.$emit("closeWindow");
