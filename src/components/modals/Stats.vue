@@ -94,6 +94,12 @@ export default {
 
     closeReset: function() {
       this.showModalReset = false;
+    },
+
+    deleteStats: function() {
+      this.$parent.counterWins = this.$parent.counterDraws = this.$parent.counterLoses = 0;
+      this.showModalReset = false;
+      this.$emit("closeWindow");
     }
   }
 };
