@@ -13,7 +13,7 @@ export default {
         (hand == "hand-spock" && this.computerChoice == "hand-scissors") ||
         (hand == "hand-spock" && this.computerChoice == "hand-rock")
       ) {
-        this.counterWins++;
+        localStorage.counterWins = this.counterWins++;
         this.results = "User wins";
         this.message = "Winner winner chicken dinner!";
 

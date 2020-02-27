@@ -8,7 +8,7 @@ export default {
         (hand == "hand-lizard" && this.computerChoice == "hand-lizard") ||
         (hand == "hand-spock" && this.computerChoice == "hand-spock")
       ) {
-        this.counterDraws++;
+        localStorage.counterDraws = this.counterDraws++;
         this.results = "Players draw";
 
         if (hand == "hand-rock" && this.computerChoice == "hand-rock") {
