@@ -165,8 +165,8 @@
 </style>
 
 <script>
-import modalInfo from "./components/Info.vue";
-import modalRules from "./components/Rules.vue";
+import modalInfo from "./components/modals/Info.vue";
+import modalRules from "./components/modals/Rules.vue";
 import modalStats from "./components/modals/Stats.vue";
 
 import controller from "./components/Controller.vue";
