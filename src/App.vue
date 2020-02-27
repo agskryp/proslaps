@@ -13,7 +13,7 @@
       <main>
         <div class="row">
           <div class="col-6 col-md-5 order-0">
-            <span class="h4 text-center d-block font-weight-bold">User</span>
+            <span class="h6 text-center d-block font-weight-bold">User</span>
 
             <div
               class="human-icon-container text-center"
@@ -34,7 +34,7 @@
           </div>
 
           <div class="col-6 col-md-5 order-1 order-md-2">
-            <span class="h4 text-center d-block font-weight-bold"
+            <span class="h6 text-center d-block font-weight-bold"
               >Computer</span
             >
 
@@ -140,6 +140,8 @@
 
   .btn-link {
     border: none;
+    outline: none;
+    background: transparent;
   }
 
   .attribution {
@@ -184,6 +186,26 @@ export default {
 
   mounted() {
     this.idleScreen();
+
+    // if (localStorage.counterWins) {
+      this.counterWins = localStorage.counterWins;
+      this.counterDraws = localStorage.counterDraws;
+      this.counterLoses = localStorage.counterLoses;
+    // }
+  },
+
+  watch: {
+    counterWins(value) {
+      localStorage.counterWins = value;
+    },
+
+    counterDraws(value) {
+      localStorage.counterDraws = value;
+    },
+
+    counterLoses(value) {
+      localStorage.counterLoses = value;
+    },
   },
 
   methods: {

@@ -14,7 +14,7 @@ export default {
         (hand == "hand-spock" && this.computerChoice == "hand-rock")
       ) {
         this.counterWins++;
-        this.results = "User wins!";
+        this.results = "User wins";
         this.message = "Winner winner chicken dinner!";
 
         if (hand == "hand-rock" && this.computerChoice == "hand-scissors") {
