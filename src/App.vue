@@ -124,6 +124,7 @@
                   href="https://agskryp.com"
                   class="text-decoration-none"
                   target="_blank"
+                  rel="noopener"
                 >
                   A.G. Skryp
                 </a>

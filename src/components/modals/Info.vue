@@ -33,7 +33,7 @@
 
           <p>
             ProSlaps! v1.0 was designed and developed by
-            <a href="https://agskryp.com" target="_blank">
+            <a href="https://agskryp.com" target="_blank" rel="noopener">
               Andrew Skrypnyk
             </a>
             using:
