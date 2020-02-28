@@ -207,8 +207,6 @@ export default {
     this.localStats();
   },
 
-  watch: {},
-
   methods: {
     idleScreen() {
       this.idleTimer = setInterval(() => {

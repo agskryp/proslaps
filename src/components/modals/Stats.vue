@@ -1,7 +1,7 @@
 <template>
   <div>
     <div class="modal-container">
-      <div class="modal-dialog" style="width: 100%;">
+      <div class="modal-dialog w-100">
         <div class="modal-content modal-lg">
           <div class="modal-header">
             <h3 class="modal-title">Stats</h3>
@@ -105,8 +105,8 @@
 
     <resetModal
       v-if="showModalReset == true"
-      @closeModal="closeReset()"
-      @closeAllModals="resetStats()"
+      @closeModal="closeResetModal()"
+      @confirmReset="resetStats()"
     />
   </div>
 </template>
@@ -146,7 +146,7 @@ export default {
       this.showModalReset = true;
     },
 
-    closeReset: function() {
+    closeResetModal: function() {
       this.showModalReset = false;
       this.$refs.xClose.focus();
     },
