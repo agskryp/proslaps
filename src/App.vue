@@ -102,6 +102,7 @@
               <button
                 class="btn-link btn-sm text-decoration-none"
                 @click="infoButton()"
+                ref="information"
               >
                 Information
               </button>
@@ -131,7 +132,7 @@
       </footer>
 
       <modalRules v-if="showModalRules" @closeWindow="showModalRules = false" />
-      <modalInfo v-if="showModalInfo" @closeWindow="showModalInfo = false" />
+      <modalInfo v-if="showModalInfo" @closeWindow="closeInfoModal()" />
       <modalStats v-if="showModalStats" @closeWindow="showModalStats = false" />
     </div>
   </div>
@@ -223,6 +224,11 @@ export default {
 
     infoButton() {
       this.showModalInfo = true;
+    },
+
+    closeInfoModal() {
+      this.showModalInfo = false;
+      this.$refs.information.focus();
     }
   }
 };

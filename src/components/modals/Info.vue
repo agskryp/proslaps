@@ -1,7 +1,7 @@
 <template>
   <div class="modal-container" autofocus>
     <div ref="Information" class="modal-dialog" role="document">
-      <div class="modal-content" ref="xClose">
+      <div class="modal-content">
         <div class="modal-header">
           <h3 class="modal-title">Information</h3>
 
@@ -9,6 +9,7 @@
             type="button"
             class="close"
             aria-label="Close"
+            ref="xClose"
             @click="closeInfo()"
           >
             <span aria-hidden="true">&times;</span>
@@ -72,9 +73,9 @@ export default {
   },
 
   mounted() {
-    // this.$refs.xClose.focus();
+    this.$refs.xClose.focus();
     // console.log( this.$refs.Information.$el );
-    console.log( this.$refs.xClose );
+    // console.log( this.$refs.xClose );
   },
 
   methods: {
