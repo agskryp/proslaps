@@ -103,47 +103,18 @@
       </div>
     </div>
 
-    <resetModal v-if="showModalReset == true" @closeModal="closeReset()" @closeAllModals="resetStats()" />
-
-    <!-- <div class="modal-container" v-if="showModalReset == true">
-      <div class="modal-dialog">
-        <div class="modal-content modal-lg">
-          <div class="modal-header">
-            <h3 class="modal-title">Are you sure?</h3>
-          </div>
-
-          <div class="modal-body">
-            <p>Pressing confirm will erase all of your stats.</p>
-          </div>
-
-          <div class="modal-footer">
-            <button
-              type="button"
-              class="btn btn-danger"
-              @click="resetStats()"
-            >
-              Confirm
-            </button>
-
-            <button
-              type="button"
-              class="btn btn-secondary"
-              ref="nevermindReset"
-              @click="closeReset()"
-            >
-              Nevermind
-            </button>
-          </div>
-        </div>
-      </div>
-    </div> -->
+    <resetModal
+      v-if="showModalReset == true"
+      @closeModal="closeReset()"
+      @closeAllModals="resetStats()"
+    />
   </div>
 </template>
 
 <style lang="scss"></style>
 
 <script>
-import resetModal from './Reset';
+import resetModal from "./Reset";
 
 export default {
   name: "Rules",
@@ -177,6 +148,7 @@ export default {
 
     closeReset: function() {
       this.showModalReset = false;
+      this.$refs.xClose.focus();
     },
 
     resetStats: function() {

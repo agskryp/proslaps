@@ -12,11 +12,7 @@
           </div>
 
           <div class="modal-footer">
-            <button
-              type="button"
-              class="btn btn-danger"
-              @click="resetStats()"
-            >
+            <button type="button" class="btn btn-danger" @click="resetStats()">
               Confirm
             </button>
 
@@ -43,20 +39,18 @@ export default {
 
   data() {
     return {
-      showModalReset: false,
+      showModalReset: false
       // counterTotal: 0
     };
   },
 
   mounted() {
-
-this.$refs.nevermindButton.focus();
-
+    this.$refs.nevermindButton.focus();
   },
 
   methods: {
     closeReset: function() {
-      this.$emit( 'closeModal' );
+      this.$emit("closeModal");
     },
 
     resetStats: function() {

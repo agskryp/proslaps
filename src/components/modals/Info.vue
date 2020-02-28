@@ -47,11 +47,7 @@
         </div>
 
         <div class="modal-footer">
-          <button
-            type="button"
-            class="btn btn-secondary"
-            @click="closeInfo()"
-          >
+          <button type="button" class="btn btn-secondary" @click="closeInfo()">
             Close
           </button>
         </div>
