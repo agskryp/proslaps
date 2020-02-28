@@ -25,6 +25,8 @@
                 class="human-icon"
               />
             </div>
+
+            <p class="">Add screen reader result</p>
           </div>
 
           <div
@@ -117,7 +119,7 @@
               </button>
             </div>
 
-            <div class="col text-right">
+            <div class="col-auto text-right">
               <span class="d-block attribution"
                 >Made by
                 <a
