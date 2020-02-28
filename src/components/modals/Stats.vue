@@ -10,6 +10,7 @@
               type="button"
               class="close"
               aria-label="Close"
+              ref="xClose"
               @click="close()"
             >
               <span aria-hidden="true">&times;</span>
@@ -102,7 +103,9 @@
       </div>
     </div>
 
-    <div class="modal-container" v-if="showModalReset == true">
+    <resetModal v-if="showModalReset == true" @closeModal="closeReset()" @closeAllModals="resetStats()" />
+
+    <!-- <div class="modal-container" v-if="showModalReset == true">
       <div class="modal-dialog">
         <div class="modal-content modal-lg">
           <div class="modal-header">
@@ -114,13 +117,18 @@
           </div>
 
           <div class="modal-footer">
-            <button type="button" class="btn btn-danger" @click="resetStats()">
+            <button
+              type="button"
+              class="btn btn-danger"
+              @click="resetStats()"
+            >
               Confirm
             </button>
 
             <button
               type="button"
               class="btn btn-secondary"
+              ref="nevermindReset"
               @click="closeReset()"
             >
               Nevermind
@@ -128,15 +136,19 @@
           </div>
         </div>
       </div>
-    </div>
+    </div> -->
   </div>
 </template>
 
 <style lang="scss"></style>
 
 <script>
+import resetModal from './Reset';
+
 export default {
   name: "Rules",
+
+  components: { resetModal },
 
   data() {
     return {
@@ -150,6 +162,8 @@ export default {
       parseInt(this.$parent.counterWins) +
       parseInt(this.$parent.counterDraws) +
       parseInt(this.$parent.counterLoses);
+
+    this.$refs.xClose.focus();
   },
 
   methods: {

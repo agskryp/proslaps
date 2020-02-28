@@ -1,5 +1,5 @@
 <template>
-  <div class="modal-container" autofocus>
+  <div class="modal-container">
     <div ref="Information" class="modal-dialog" role="document">
       <div class="modal-content">
         <div class="modal-header">
@@ -74,8 +74,6 @@ export default {
 
   mounted() {
     this.$refs.xClose.focus();
-    // console.log( this.$refs.Information.$el );
-    // console.log( this.$refs.xClose );
   },
 
   methods: {

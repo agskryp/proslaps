@@ -9,7 +9,8 @@
             type="button"
             class="close"
             aria-label="Close"
-            @click="rules()"
+            ref="xClose"
+            @click="closeRules()"
           >
             <span aria-hidden="true">&times;</span>
           </button>
@@ -63,7 +64,7 @@
         </div>
 
         <div class="modal-footer">
-          <button type="button" class="btn btn-secondary" @click="rules()">
+          <button type="button" class="btn btn-secondary" @click="closeRules()">
             Close
           </button>
         </div>
@@ -78,8 +79,12 @@
 export default {
   name: "Rules",
 
+  mounted() {
+    this.$refs.xClose.focus();
+  },
+
   methods: {
-    rules: function() {
+    closeRules: function() {
       this.$emit("closeWindow");
     }
   }

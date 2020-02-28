@@ -38,7 +38,14 @@ html {
   display: flex;
   justify-content: center;
   align-items: center;
+  overflow: hidden;
   background: rgba( 0, 0, 0, .5 );
+
+  button.close {
+    &:focus {
+      outline: none;
+    }
+  }
 }
 
 @import "animation";

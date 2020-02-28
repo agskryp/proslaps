@@ -95,6 +95,7 @@
               <button
                 class="btn-link btn-sm text-decoration-none"
                 @click="rulesButton()"
+                ref="rules"
               >
                 Rules
               </button>
@@ -110,6 +111,7 @@
               <button
                 class="btn-link btn-sm text-decoration-none"
                 @click="statsButton()"
+                ref="stats"
               >
                 Stats
               </button>
@@ -131,9 +133,9 @@
         </div>
       </footer>
 
-      <modalRules v-if="showModalRules" @closeWindow="showModalRules = false" />
+      <modalRules v-if="showModalRules" @closeWindow="closeRulesModal()" />
       <modalInfo v-if="showModalInfo" @closeWindow="closeInfoModal()" />
-      <modalStats v-if="showModalStats" @closeWindow="showModalStats = false" />
+      <modalStats v-if="showModalStats" @closeWindow="closeStatsModal()" />
     </div>
   </div>
 </template>
@@ -229,6 +231,16 @@ export default {
     closeInfoModal() {
       this.showModalInfo = false;
       this.$refs.information.focus();
+    },
+
+    closeRulesModal() {
+      this.showModalRules = false;
+      this.$refs.rules.focus();
+    },
+
+    closeStatsModal() {
+      this.showModalStats = false;
+      this.$refs.stats.focus();
     }
   }
 };
