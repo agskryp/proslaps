@@ -12,7 +12,12 @@
           </div>
 
           <div class="modal-footer">
-            <button type="button" class="btn btn-danger" @click="resetStats()">
+            <button
+              type="button"
+              class="btn btn-danger"
+              @click="resetStats()"
+              tabindex="2"
+            >
               Confirm
             </button>
 
@@ -20,6 +25,7 @@
               type="button"
               class="btn btn-secondary"
               ref="nevermindButton"
+              tabindex="1"
               @click="closeReset()"
             >
               Nevermind
