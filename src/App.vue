@@ -130,8 +130,8 @@
         </div>
       </footer>
 
-      <modalInfo v-if="showModalInfo" @closeWindow="showModalInfo = false" />
       <modalRules v-if="showModalRules" @closeWindow="showModalRules = false" />
+      <modalInfo v-if="showModalInfo" @closeWindow="showModalInfo = false" />
       <modalStats v-if="showModalStats" @closeWindow="showModalStats = false" />
     </div>
   </div>

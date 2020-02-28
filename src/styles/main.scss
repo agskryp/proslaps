@@ -9,6 +9,13 @@ html {
   @media all and (min-width: $screen-lg) {
     font-size: 18px;
   }
+
+  a {
+    &:focus {
+      outline: none;
+      color: #0056b3;
+    }
+  }
 }
 
 #ProSlaps {
