@@ -1,7 +1,7 @@
 <template>
-  <div class="modal-container">
-    <div class="modal-dialog" role="document">
-      <div class="modal-content">
+  <div class="modal-container" autofocus>
+    <div ref="Information" class="modal-dialog" role="document">
+      <div class="modal-content" ref="xClose">
         <div class="modal-header">
           <h3 class="modal-title">Information</h3>
 
@@ -16,7 +16,7 @@
         </div>
 
         <div class="modal-body">
-          <h4>What is ProSlaps!?</h4>
+          <h4>What is ProSlaps!</h4>
 
           <p>
             ProSlaps! is an extension of the traditional Rock, Paper, Scissors,
@@ -24,15 +24,17 @@
           </p>
 
           <p>
-            The name <b>ProSlaps!</b> is from combining and rearranging the
-            first couple of letters of each hand gesture.
+            The name <b>ProSlaps!</b> derives from the combination and
+            rearrangement of the first couple of letters of each hand gesture.
           </p>
 
           <h4>Credits</h4>
 
           <p>
             ProSlaps! v1.0 was designed and developed by
-            <a href="https://agskryp.com" target="_blank">Andrew Skrypnyk</a>
+            <a href="https://agskryp.com" target="_blank">
+              Andrew Skrypnyk
+            </a>
             using:
           </p>
 
@@ -44,7 +46,11 @@
         </div>
 
         <div class="modal-footer">
-          <button type="button" class="btn btn-secondary" @click="closeInfo()">
+          <button
+            type="button"
+            class="btn btn-secondary"
+            @click="closeInfo()"
+          >
             Close
           </button>
         </div>
@@ -63,6 +69,12 @@ export default {
     return {
       showModal: false
     };
+  },
+
+  mounted() {
+    // this.$refs.xClose.focus();
+    // console.log( this.$refs.Information.$el );
+    console.log( this.$refs.xClose );
   },
 
   methods: {
