@@ -1,5 +1,15 @@
+@import '~bootstrap/scss/mixins.scss';
+@import '~bootstrap/scss/bootstrap-grid.scss';
+@import '~bootstrap/scss/buttons.scss';
+@import '~bootstrap/scss/close.scss';
+@import '~bootstrap/scss/modal.scss';
+// @import '~bootstrap/scss/root.scss';
+@import '~bootstrap/scss/reboot.scss';
+@import '~bootstrap/scss/tables.scss';
+@import '~bootstrap/scss/type.scss';
+@import '~bootstrap/scss/utilities.scss';
+
 @import "variables";
-@import '~bootstrap/dist/css/bootstrap.css';
 
 html {
   font-size: 14px;
