@@ -21,22 +21,6 @@ html {
     font-size: 18px;
   }
 
-  @media all and ( max-height: 640px ) {
-    font-size: 16px;
-
-    .container {
-      max-width: 960px;
-    }
-  }
-
-  @media all and ( max-height: 530px ) {
-    font-size: 14px;
-    
-    .container {
-      max-width: 720px;
-    }
-  }
-
   a {
     &:focus {
       outline: none;
