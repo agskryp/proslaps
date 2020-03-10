@@ -8,6 +8,14 @@
   @media all and ( min-width: $screen-lg ) {
     font-size: $lg-icon;
   }
+
+  @media all and ( max-height: 640px ) {
+    font-size: $md-icon;
+  }
+
+  @media all and ( max-height: 530px ) {
+    font-size: $sm-icon;
+  }
 }
 
 .human-icon {

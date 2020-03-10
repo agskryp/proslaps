@@ -77,7 +77,7 @@
           @spock="onAction('hand-spock', 'spock')"
         />
 
-        <div class="row">
+        <div class="row stats-row">
           <div class="col-md-10 mx-auto">
             <div class="row mt-1 mb-1 mt-md-2 mb-md-2">
               <div class="col">
@@ -172,6 +172,13 @@
     padding: 0.25rem 0.5rem;
     font-size: 0.875rem;
     line-height: 1.5;
+  }
+}
+
+.stats-row {
+  display: none;
+  @media all and ( min-height: 360px ) {
+    display: block;
   }
 }
 </style>
