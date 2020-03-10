@@ -1,7 +1,7 @@
 {
   "name": "pro-slaps",
   "version": "1.0.0",
-  "people": "Andrew Skrypnyk <agksryp@gmail.com> (https://agskryp.com)", 
+  "people": "Andrew Skrypnyk <agksryp@gmail.com> (https://agskryp.com)",
   "private": true,
   "scripts": {
     "serve": "vue-cli-service serve",
@@ -20,7 +20,7 @@
   "devDependencies": {
     "@vue/cli-plugin-babel": "^4.2.0",
     "@vue/cli-plugin-eslint": "^4.2.2",
-    "@vue/cli-service": "^4.2.0",
+    "@vue/cli-service": "^4.2.3",
     "@vue/eslint-config-prettier": "^6.0.0",
     "babel-eslint": "^10.0.3",
     "eslint": "^6.7.2",
