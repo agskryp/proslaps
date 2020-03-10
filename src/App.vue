@@ -177,7 +177,7 @@
 
 .stats-row {
   display: none;
-  @media all and ( min-height: 360px ) {
+  @media all and (min-height: 360px) {
     display: block;
   }
 }
