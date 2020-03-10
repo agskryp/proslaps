@@ -26,7 +26,9 @@
               />
             </div>
 
-            <p class="">Add screen reader result</p>
+            <p v-if="actionResults" class="text-center sr-only">
+              {{ this.humanHand }}
+            </p>
           </div>
 
           <div
@@ -49,6 +51,10 @@
                 size="5x"
                 :icon="this.computerChoice"
               />
+
+              <p v-if="actionResults" class="text-center sr-only">
+                {{ this.computerHand }}
+              </p>
             </div>
           </div>
         </div>
@@ -64,11 +70,11 @@
         </div>
 
         <controller
-          @paper="onAction('hand-paper')"
-          @rock="onAction('hand-rock')"
-          @scissors="onAction('hand-scissors')"
-          @lizard="onAction('hand-lizard')"
-          @spock="onAction('hand-spock')"
+          @paper="onAction('hand-paper', 'paper')"
+          @rock="onAction('hand-rock', 'rock')"
+          @scissors="onAction('hand-scissors', 'scissors')"
+          @lizard="onAction('hand-lizard', 'lizard')"
+          @spock="onAction('hand-spock', 'spock')"
         />
 
         <div class="row">
@@ -195,7 +201,9 @@ export default {
   data() {
     return {
       computerChoice: "hand-scissors",
+      computerHand: "",
       humanChoice: "hand-rock",
+      humanHand: "",
       results: "\xa0",
       actionResults: false,
       showModalRules: false,

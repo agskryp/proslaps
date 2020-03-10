@@ -15,13 +15,14 @@ export default {
       }, 3000);
     },
 
-    onAction(hand) {
+    onAction(hand, screenReader) {
       clearInterval(this.idleTimer);
       this.actionResults = true;
 
       this.computerIcon();
 
       this.humanChoice = hand;
+      this.humanHand = "User plays " + screenReader;
 
       this.victory(hand);
       this.draw(hand);
