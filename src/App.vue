@@ -181,6 +181,10 @@
     display: block;
   }
 }
+
+.modal-dialog {
+  max-width: none;
+}
 </style>
 
 <script>
