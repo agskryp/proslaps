@@ -12,7 +12,7 @@ import {
   faHandSpock
 } from "@fortawesome/free-solid-svg-icons";
 
-import './registerServiceWorker'
+import "./registerServiceWorker";
 
 library.add(faHandPaper, faHandRock, faHandScissors, faHandLizard, faHandSpock);
 

@@ -225,16 +225,6 @@ export default {
     this.localStats();
   },
 
-  created() {
-    // Check that service workers are supported
-    if ("serviceWorker" in navigator) {
-      // Use the window load event to keep the page load performant
-      window.addEventListener("load", () => {
-        navigator.serviceWorker.register("./assets/scripts/service-worker.js");
-      });
-    }
-  },
-
   methods: {
     idleScreen() {
       this.idleTimer = setInterval(() => {
