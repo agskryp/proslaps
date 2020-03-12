@@ -1,16 +1,17 @@
 // Default bootstrap
 @import '~bootstrap/scss/mixins.scss';
-
 @import '~bootstrap/scss/bootstrap-grid.scss';
 @import '~bootstrap/scss/reboot.scss';
-@import '~bootstrap/scss/modal.scss';
-@import '~bootstrap/scss/type.scss';
-@import '~bootstrap/scss/utilities.scss';
 
 // Minimized bootstrap
-@import 'bootstrap/buttons';
+@import 'bootstrap/buttons'; // on load
 @import 'bootstrap/close'; // can import with component
+@import 'bootstrap/modal'; // can import with component(?)
 @import 'bootstrap/tables'; // can import with component
+@import 'bootstrap/type'; // on load
+@import "bootstrap/utilities/sizing"; // can import with component(?)
+@import "bootstrap/utilities/text"; // on load
+
 
 // Custom styles
 @import "variables";
