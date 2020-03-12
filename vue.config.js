@@ -43,5 +43,12 @@ module.exports = {
         return assetFilename.endsWith(".js", ".css");
       }
     }
+  },
+
+  pwa: {
+    name: "ProSlaps!",
+    themeColor: "#212529",
+    msTileColor: "#FFFFFF",
+    appleMobileWebAppCapable: "yes"
   }
 };
