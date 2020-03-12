@@ -1,14 +1,18 @@
+// Default bootstrap
 @import '~bootstrap/scss/mixins.scss';
+
 @import '~bootstrap/scss/bootstrap-grid.scss';
-@import '~bootstrap/scss/buttons.scss';
-@import '~bootstrap/scss/close.scss';
-@import '~bootstrap/scss/modal.scss';
-// @import '~bootstrap/scss/root.scss';
 @import '~bootstrap/scss/reboot.scss';
-@import '~bootstrap/scss/tables.scss';
+@import '~bootstrap/scss/modal.scss';
 @import '~bootstrap/scss/type.scss';
 @import '~bootstrap/scss/utilities.scss';
 
+// Minimized bootstrap
+@import 'bootstrap/buttons';
+@import 'bootstrap/close'; // can import with component
+@import 'bootstrap/tables'; // can import with component
+
+// Custom styles
 @import "variables";
 
 html {
@@ -51,12 +55,6 @@ html {
   align-items: center;
   overflow: hidden;
   background: rgba( 0, 0, 0, .5 );
-
-  button.close {
-    &:focus {
-      outline: none;
-    }
-  }
 }
 
 @import "animation";
