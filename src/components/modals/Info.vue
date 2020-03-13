@@ -56,7 +56,12 @@
   </div>
 </template>
 
-<style lang="scss"></style>
+<style lang="scss">
+@import "@/styles/bootstrap/_close.scss";
+@import "@/styles/bootstrap/_modal.scss";
+@import "@/styles/bootstrap/_tables.scss";
+@import "@/styles/bootstrap/utilities/_sizing.scss";
+</style>
 
 <script>
 export default {
