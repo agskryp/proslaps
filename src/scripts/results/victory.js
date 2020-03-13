@@ -15,10 +15,21 @@ export default {
       ) {
         localStorage.counterWins = this.counterWins++;
         this.results = "User wins";
-        this.message = "Winner winner chicken dinner!";
 
         if (hand == "hand-rock" && this.computerChoice == "hand-scissors") {
           this.message = "Those scissors couldn't cut through butter";
+        }
+
+        if (hand == "hand-rock" && this.computerChoice == "hand-lizard") {
+          this.message = "The making of lizard soup";
+        }
+
+        if (hand == "hand-paper" && this.computerChoice == "hand-rock") {
+          this.message = "Covered and smothered like peanut butter";
+        }
+
+        if (hand == "hand-paper" && this.computerChoice == "hand-spock") {
+          this.message = "Flooding the inbox with spam";
         }
 
         if (hand == "hand-scissors" && this.computerChoice == "hand-paper") {
@@ -31,6 +42,18 @@ export default {
 
         if (hand == "hand-lizard" && this.computerChoice == "hand-paper") {
           this.message = "Getting a good source of fiber";
+        }
+
+        if (hand == "hand-lizard" && this.computerChoice == "hand-spock") {
+          this.message = "Lick licky lick";
+        }
+
+        if (hand == "hand-spock" && this.computerChoice == "hand-scissors") {
+          this.message = "Four fingers are better than two";
+        }
+
+        if (hand == "hand-spock" && this.computerChoice == "hand-rock") {
+          this.message = "Set your phasers to sand";
         }
       }
     }
