@@ -155,24 +155,10 @@
   margin: 0;
 }
 
-.footer-container {
-  padding: 0 0.5rem;
-
-  .btn-link {
-    border: none;
-    outline: none;
-    background: transparent;
-
-    &:focus {
-      color: #0056b3;
-    }
-  }
-
-  .attribution {
-    padding: 0.25rem 0.5rem;
-    font-size: 0.875rem;
-    line-height: 1.5;
-  }
+.attribution {
+  padding: 0.25rem 0.5rem;
+  font-size: 0.875rem;
+  line-height: 1.5;
 }
 
 .stats-row {

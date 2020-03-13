@@ -13,6 +13,7 @@
 // Custom styles
 @import "variables";
 @import "animation";
+@import "buttons";
 @import "icon";
 
 html {
@@ -26,9 +27,13 @@ html {
   }
 
   a {
-    &:focus {
+    color: #0056b3;
+
+    &:focus,
+    &:hover,
+    &:active {
       outline: none;
-      color: #0056b3;
+      color: #003491;
     }
   }
 }
@@ -43,15 +48,3 @@ html {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
-
-// @media screen and (min-width: 320px) and (max-width: 767px) and (orientation: landscape) {
-//   html {
-//     transform: rotate(-90deg);
-//     transform-origin: left top;
-//     width: 100vh;
-//     overflow-x: hidden;
-//     position: absolute;
-//     top: 100%;
-//     left: 0;
-//   }
-// }

@@ -1,0 +1,26 @@
+.btn-lizard {
+  @include button-variant(green, white);
+}
+
+.btn-spock {
+  @include button-variant(#0168ac, white);
+}
+
+.btn-paper {
+  @include button-variant(white, #212529);
+}
+
+.btn-link {
+  color: #0056b3;
+  border: none;
+  outline: none;
+  background: transparent;
+
+  &:focus,
+  &:active,
+  &:hover,
+  &.focus {
+    outline: none;
+    color: #003491;
+  }
+}

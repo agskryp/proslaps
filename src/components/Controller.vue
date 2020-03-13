@@ -5,7 +5,7 @@
         <div class="col-12 col-md mt-1 mb-1 mt-md-2 mb-md-2">
           <button
             type="button"
-            class="btn btn-light btn-block btn-lg"
+            class="btn btn-paper btn-block btn-lg"
             data-toggle="button"
             aria-pressed="false"
             @click="buttonPaper()"
@@ -41,7 +41,7 @@
         <div class="col-12 col-md mt-1 mb-1 mt-md-2 mb-md-2">
           <button
             type="button"
-            class="btn btn-success btn-block btn-lg"
+            class="btn btn-lizard btn-block btn-lg"
             data-toggle="button"
             aria-pressed="false"
             @click="buttonLizard()"
@@ -53,7 +53,7 @@
         <div class="col-12 col-md mt-1 mb-1 mt-md-2 mb-md-2">
           <button
             type="button"
-            class="btn btn-info btn-block btn-lg"
+            class="btn btn-spock btn-block btn-lg"
             data-toggle="button"
             aria-pressed="false"
             @click="buttonSpock()"
