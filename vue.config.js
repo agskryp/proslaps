@@ -49,6 +49,10 @@ module.exports = {
     name: "ProSlaps!",
     themeColor: "#212529",
     msTileColor: "#FFFFFF",
-    appleMobileWebAppCapable: "yes"
+    appleMobileWebAppCapable: "yes",
+    manifestOptions: {
+      orientation: "portrait",
+      display: "fullscreen"
+    }
   }
 };
