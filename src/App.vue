@@ -97,7 +97,7 @@
       </main>
 
       <footer class="row">
-        <div class="col-md-10 mx-auto footer-container">
+        <div class="col-md-10 mx-auto">
           <div class="row">
             <div class="col">
               <button
