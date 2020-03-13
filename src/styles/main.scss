@@ -5,10 +5,10 @@
 @import '~bootstrap/scss/reboot.scss';
 
 // Minimized bootstrap
-@import 'bootstrap/buttons'; // on load
-@import 'bootstrap/grid'; // on load
-@import 'bootstrap/type'; // on load
-@import "bootstrap/utilities/text"; // on load
+@import 'bootstrap/buttons';
+@import 'bootstrap/grid';
+@import 'bootstrap/type';
+@import "bootstrap/utilities/text";
 
 // Custom styles
 @import "variables";
@@ -42,17 +42,4 @@ html {
   overflow: hidden;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-}
-
-.modal-container {
-  position: absolute;
-  top: 0;
-  left: 0;
-  right: 0;
-  bottom: 0;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  overflow: hidden;
-  background: rgba( 0, 0, 0, .5 );
 }

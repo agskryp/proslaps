@@ -116,6 +116,7 @@
 @import "@/styles/bootstrap/_modal.scss";
 @import "@/styles/bootstrap/_tables.scss";
 @import "@/styles/bootstrap/utilities/_sizing.scss";
+@import "@/styles/_modals.scss";
 </style>
 
 <script>
