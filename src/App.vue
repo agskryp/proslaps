@@ -184,22 +184,15 @@
 </style>
 
 <script>
-import modalInfo from "./components/modals/Info.vue";
-import modalRules from "./components/modals/Rules.vue";
-import modalStats from "./components/modals/Stats.vue";
-
-import controller from "./components/Controller.vue";
-
 import data from "./scripts/data";
 import onAction from "./scripts/onAction";
 import onIdle from "./scripts/onIdle";
 
+import controller from "./components/Controller.vue";
+
 export default {
   name: "ProSlaps",
   components: {
-    modalInfo,
-    modalRules,
-    modalStats,
     controller
   },
 

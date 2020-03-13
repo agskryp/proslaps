@@ -14,6 +14,10 @@ import {
 
 import "./scripts/services/registerServiceWorker";
 
+Vue.component("modalInfo", () => import("@/components/modals/Info.vue"));
+Vue.component("modalRules", () => import("@/components/modals/Rules.vue"));
+Vue.component("modalStats", () => import("@/components/modals/Stats.vue"));
+
 library.add(faHandPaper, faHandRock, faHandScissors, faHandLizard, faHandSpock);
 
 Vue.component("font-awesome-icon", FontAwesomeIcon);
