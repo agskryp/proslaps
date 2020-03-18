@@ -8,6 +8,9 @@ A PWA game that extends the traditional Rock, Paper, Scissors, with Lizard and S
 * [Bootstrap v4.4.1](https://getbootstrap.com/) - The Front-End Component Library
 * [Font Awesome v4.7.0](https://fontawesome.com/) - The Icon Set and Toolkit
 
+## Demo
+[Demo](https://agskryp.com/wp-content/themes/version9/assets/apps/proslaps/index.html)
+
 ## Author
 
 **Andrew Skrypnyk** - [A.G. Skryp](https://agksryp.com)
