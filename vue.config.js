@@ -1,6 +1,8 @@
 //const path = require("path");
 
 module.exports = {
+  publicPath: "./",
+  outputDir: "proslaps",
   pluginOptions: {
     "style-resources-loader": {
       preProcessor: "scss",
