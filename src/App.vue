@@ -205,12 +205,6 @@ export default {
   },
 
   methods: {
-    idleScreen() {
-      this.idleTimer = setInterval(() => {
-        this.idleAnimations();
-      }, 1000);
-    },
-
     rulesButton() {
       this.showModalRules = true;
     },

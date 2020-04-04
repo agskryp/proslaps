@@ -6,6 +6,12 @@ export default {
   mixins: [victory, draw, defeat],
 
   methods: {
+    idleScreen() {
+      this.idleTimer = setInterval(() => {
+        this.idleAnimations();
+      }, 1000);
+    },
+
     invocation() {
       this.createPause = setTimeout(() => {
         this.idleScreen();
