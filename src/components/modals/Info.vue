@@ -20,8 +20,9 @@
           <h4>What is ProSlaps!</h4>
 
           <p>
-            ProSlaps! is an extension of the traditional Rock, Paper, Scissors,
-            with Lizard and Spock being additional choices.
+            ProSlaps! is a progressive web application that extends the
+            traditional game of Paper, Rock, Scissors, by having Lizard and
+            Spock be additional choices.
           </p>
 
           <p>

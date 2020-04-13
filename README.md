@@ -1,6 +1,6 @@
 # ProSlaps!
 
-A PWA game that extends the traditional Rock, Paper, Scissors, with Lizard and Spock being additional choices.
+ProSlaps! is a progressive web application that extends the traditional game of Paper, Rock, Scissors, by having Lizard and Spock be additional choices.
 
 ## Built With
 
