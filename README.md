@@ -9,7 +9,7 @@ ProSlaps! is a progressive web application that extends the traditional game of 
 * [Font Awesome v4.7.0](https://fontawesome.com/) - The Icon Set and Toolkit
 
 ## Demo
-[Demo](https://agskryp.com/wp-content/themes/version9/assets/apps/proslaps/index.html)
+[Demo](https://agskryp.com/proslaps/)
 
 ## Author
 
